@@ -43,7 +43,7 @@ export default function Login() {
                     <div>
                         <h1 className="header2 mb-4">
                             Login
-                            <span className="text-pinkText">.</span>
+                            <span className="text-pinkText ml-[2px]">.</span>
                         </h1>
                         <h2 className="subHeader2">Login to your account</h2>
                     </div>

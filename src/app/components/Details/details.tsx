@@ -2,7 +2,8 @@ export default function Details() {
     return (
         <section className="bg-lightBg p-8 md:p-16">
             <h1 className="font-bold text-black header2 mb-4">
-                Simple but elegant.
+                Simple but elegant
+                <span className="text-pinkText ml-[2px]">.</span>
             </h1>
             <p className="text-grayText">
                 eBizz makes building a digital business card easier than ever.

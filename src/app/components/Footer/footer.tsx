@@ -4,7 +4,7 @@ import { AiFillInstagram, AiFillYoutube } from "react-icons/ai";
 
 export default function Footer() {
     return (
-        <footer className="bg-brownBg flex flex-col gap-6 sm:gap-0 sm:flex-row justify-between containerPadding">
+        <footer className="bg-brownBg flex flex-col gap-6 sm:gap-0 sm:flex-row justify-between px-20 py-10 sm:p-8 md:px-20 md:py-12">
             <h1 className="header2 text-white">EBIZZ</h1>
             <div className="flex flex-col gap-2">
                 <span className="text-white font-bold">Company</span>
