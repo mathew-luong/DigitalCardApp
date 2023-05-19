@@ -36,4 +36,13 @@
     .subHeader2 {
         font-size: 1rem;
     }
+    .lowHeight {
+        height: calc(100% - 5rem);
+    }
+    .navItem {
+        @apply h-8 py-0 px-4 rounded-3xl flex items-center justify-center hover:text-black transition-opacity ease-in delay-300;
+    }
+    .navItemActive {
+        @apply bg-white text-black h-8 py-0 px-4 rounded-3xl flex items-center justify-center transition-opacity ease-in delay-300;
+    }
 }

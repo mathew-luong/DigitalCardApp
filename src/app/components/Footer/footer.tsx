@@ -4,10 +4,10 @@ import { AiFillInstagram, AiFillYoutube } from "react-icons/ai";
 
 export default function Footer() {
     return (
-        <footer className="bg-brownBg flex flex-col gap-6 sm:gap-0 sm:flex-row justify-between px-20 py-10 sm:p-8 md:px-20 md:py-12">
-            <h1 className="header2 text-white">EBIZZ</h1>
+        <footer className="bg-brownBg flex flex-col gap-6 sm:gap-0 sm:flex-row justify-between px-20 py-10 sm:p-8 md:px-16 md:py-12">
+            <h1 className="header2 text-white sm:hidden md:block">EBIZZ</h1>
             <div className="flex flex-col gap-2">
-                <span className="text-white font-bold">Company</span>
+                <span className="text-white font-semibold">Company</span>
                 <Link href="/about" className="text-[#DADADA] hover:text-white">
                     About
                 </Link>
@@ -22,7 +22,7 @@ export default function Footer() {
                 </Link>
             </div>
             <div className="flex flex-col gap-2">
-                <span className="text-white font-bold">FAQ</span>
+                <span className="text-white font-semibold">FAQ</span>
                 <Link href="/" className="text-[#DADADA] hover:text-white">
                     License
                 </Link>
@@ -31,7 +31,7 @@ export default function Footer() {
                 </Link>
             </div>
             <div className="flex flex-col gap-2">
-                <span className="text-white font-bold">Support</span>
+                <span className="text-white font-semibold">Support</span>
                 <Link href="/" className="text-[#DADADA] hover:text-white">
                     Privacy Notice
                 </Link>
@@ -43,6 +43,9 @@ export default function Footer() {
                 </Link>
             </div>
             <div className="flex flex-col gap-4">
+                <h1 className="header2 text-white hidden sm:block md:hidden -mb-2">
+                    EBIZZ
+                </h1>
                 <Link
                     href="/login"
                     className="border rounded-md border-white p-2 flex justify-center items-center text-white font-bold hover:bg-white hover:text-black active:bg-gray active:border-gray"

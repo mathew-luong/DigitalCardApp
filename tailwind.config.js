@@ -7,6 +7,10 @@ module.exports = {
     ],
     theme: {
         extend: {
+            gridTemplateColumns: {
+                // Each column gets the same amt of space
+                fluid: "repeat(auto-fit,minmax(3rem,1fr))",
+            },
             ringWidth: {
                 6: "6px",
             },
@@ -18,14 +22,17 @@ module.exports = {
                 gradientBg: "linear-gradient(250deg, #ec4899, #6366f1);",
             },
             colors: {
-                // gradientBg:
-                //     "linear-gradient(to right, rgb(251, 113, 133), rgb(217, 70, 239), rgb(99, 102, 241))",
                 brownBg: "#6B6868",
                 lightBg: "#F7F2F2",
+                grayBg: "#F0F0F0",
                 blueBg: "#98D0FF",
                 pinkText: "#DB30C0",
+                pinkDark: "#AD2798",
                 gray: "#AEAEAE",
                 grayText: "#686868",
+            },
+            screens: {
+                "3xl": "2000px",
             },
         },
     },
