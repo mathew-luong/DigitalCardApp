@@ -22,12 +22,12 @@ export default function Navbar() {
             // On the home page, header is transparent until the user scrolls, on other pages the header has a white background
             className={
                 "fixed top-0 w-full flex justify-center sm:justify-between px-8 md:px-16 2xl:px-56 pt-8 pb-4 sm:py-4 items-center z-10 transition-all ease-in-out delay-100 " +
-                ((pathname === "/" && offset > 50) || pathname !== "/"
+                ((pathname === "/" && offset > 1) || pathname !== "/"
                     ? "bg-opacity-100 bg-white "
                     : "bg-transparent ")
             }
         >
-            <div className="grow basis-0 hidden sm:flex justify-start">
+            <div className="grow basis-0 hidden sm:flex sm:justify-start">
                 <Link href="/" className="header2 text-pinkText">
                     EBIZZ
                 </Link>
@@ -59,7 +59,7 @@ export default function Navbar() {
             <div className="gap-4 items-center hidden sm:flex grow basis-0 justify-end">
                 <Link
                     href="/login"
-                    className="font-bold hover:text-pinkText active:text-pinkDark text-sm"
+                    className="font-bold hover:text-white active:text-slate-300 text-sm"
                 >
                     Login
                 </Link>

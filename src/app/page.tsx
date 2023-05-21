@@ -1,3 +1,4 @@
+import Content from "./components/Content/content";
 import Details from "./components/Details/details";
 import Featured from "./components/Featured/featured";
 import Footer from "./components/Footer/footer";
@@ -10,6 +11,7 @@ export default function Home() {
         <main className="h-screen">
             <Navbar />
             <Intro />
+            <Content />
             <Featured />
             <Reviews />
             <Details />

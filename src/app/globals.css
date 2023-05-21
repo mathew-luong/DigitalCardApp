@@ -6,6 +6,7 @@
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 214, 219, 220;
     --background-end-rgb: 255, 255, 255;
+    --swiper-theme-color: #ec4899 !important;
 }
 
 /* body {
@@ -49,23 +50,17 @@
     .navItemActive {
         @apply bg-white text-black h-8 py-0 px-4 rounded-3xl flex items-center justify-center transition-opacity ease-in delay-300;
     }
-    .containerBg {
-        position: relative;
-        isolation: isolate;
-    }
     .containerBg::before {
         content: "";
         position: absolute;
-        inset: 0;
-        /* background: teal; */
+        right: 0;
+        top: 0;
         z-index: -1;
-        background-image: url("/images/background/shape.svg");
-        background-position: 35rem -5rem;
         background-repeat: no-repeat;
-    }
-    .perspective {
-        perspective: 300px;
-        transform: translateY(30px) translateZ(50px) rotate(2deg) rotateX(2deg)
-            rotateY(-2deg) translateZ(0px);
+        background-position: bottom left;
+        width: 600px;
+        aspect-ratio: 1;
+        opacity: 0.3;
+        background-image: url("/images/background/blob1.svg");
     }
 }

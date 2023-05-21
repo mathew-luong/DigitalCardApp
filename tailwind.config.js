@@ -25,7 +25,7 @@ module.exports = {
                 lightBg: "#F7F2F2",
                 grayBg: "#F0F0F0",
                 blueBg: "#98D0FF",
-                pinkText: "#DB30C0",
+                pinkText: "#ec4899",
                 pinkDark: "#AD2798",
                 gray: "#AEAEAE",
                 grayText: "#686868",
