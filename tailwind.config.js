@@ -9,7 +9,7 @@ module.exports = {
         extend: {
             gridTemplateColumns: {
                 // Each column gets the same amt of space
-                fluid: "repeat(auto-fit,minmax(3rem,1fr))",
+                fluid: "repeat(auto-fit,minmax(4rem,1fr))",
             },
             ringWidth: {
                 6: "6px",
@@ -18,7 +18,6 @@ module.exports = {
                 "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
                 "gradient-conic":
                     "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-                // gradientBg: "linear-gradient(250deg, #7b2ff7, #f107a3);",
                 gradientBg: "linear-gradient(250deg, #ec4899, #6366f1);",
             },
             colors: {

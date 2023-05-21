@@ -1,6 +1,6 @@
 export default function Details() {
     return (
-        <section className="bg-lightBg p-16 md:p-24 lg:px-48 lg:py-20">
+        <section className="bg-lightBg p-8 md:p-16 lg:px-48 lg:py-20 2xl:px-56">
             <h1 className="font-bold text-black header2 mb-4">
                 Simple but elegant
                 <span className="text-pinkText ml-[2px]">.</span>

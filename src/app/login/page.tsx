@@ -99,7 +99,7 @@ export default function Login() {
                         ></input>
                         <button
                             type="submit"
-                            className="inline-flex justify-center px-4 py-2 bg-black text-white rounded-md mt-6 hover:drop-shadow-lg font-bold"
+                            className="inline-flex justify-center px-4 py-2 bg-black text-white rounded-md mt-6 hover:drop-shadow-xl font-bold"
                             aria-label="Submit"
                         >
                             Login

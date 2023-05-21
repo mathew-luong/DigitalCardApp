@@ -4,7 +4,7 @@ import { AiFillInstagram, AiFillYoutube } from "react-icons/ai";
 
 export default function Footer() {
     return (
-        <footer className="bg-brownBg flex flex-col gap-6 sm:gap-0 sm:flex-row justify-between px-20 py-10 sm:p-8 md:px-16 md:py-12">
+        <footer className="bg-brownBg flex flex-col gap-6 sm:gap-0 sm:flex-row justify-between px-12 py-10 sm:p-8 md:px-16 md:py-12 2xl:px-56">
             <h1 className="header2 text-white sm:hidden md:block">EBIZZ</h1>
             <div className="flex flex-col gap-2">
                 <span className="text-white font-semibold">Company</span>
@@ -48,7 +48,7 @@ export default function Footer() {
                 </h1>
                 <Link
                     href="/login"
-                    className="border rounded-md border-white p-2 flex justify-center items-center text-white font-bold hover:bg-white hover:text-black active:bg-gray active:border-gray"
+                    className="border rounded-md border-white p-2 flex justify-center items-center text-white font-bold hover:bg-white hover:text-black active:bg-gray active:border-gray transition-colors ease-in-out delay-75 duration-500"
                 >
                     Login
                 </Link>

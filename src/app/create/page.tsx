@@ -253,9 +253,10 @@ export default function Login() {
                         </form>
                     </div>
                 </section>
-                <section className="bg-gradientBg text-white w-full md:w-[45%] lg:w-[30%] 2xl:w-[30%] md:flex items-center md:fixed md:right-0 md:top-20 md:bottom-0 p-8 md:p-0">
+                <section className="bg-gradientBg text-white w-full p-8 md:w-[45%] lg:w-[30%] 2xl:w-[30%] md:flex items-center md:fixed md:right-0 md:top-20 md:bottom-0 md:p-0">
                     <BusinessCard />
                 </section>
+                {/* <section>Hey</section> */}
             </div>
         </article>
     );

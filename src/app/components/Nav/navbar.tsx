@@ -2,19 +2,37 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useState, useEffect } from "react";
 
 export default function Navbar() {
     const pathname = usePathname();
 
+    const [offset, setOffset] = useState(0);
+
+    useEffect(() => {
+        const onScroll = () => setOffset(window.pageYOffset);
+        // clean up code
+        window.removeEventListener("scroll", onScroll);
+        window.addEventListener("scroll", onScroll, { passive: true });
+        return () => window.removeEventListener("scroll", onScroll);
+    }, []);
+
     return (
-        <nav className="fixed top-0 w-full bg-white flex justify-center sm:justify-between px-8 md:px-16 py-4 items-center z-10">
+        <header
+            // On the home page, header is transparent until the user scrolls, on other pages the header has a white background
+            className={
+                "fixed top-0 w-full flex justify-center sm:justify-between px-8 md:px-16 2xl:px-56 pt-8 pb-4 sm:py-4 items-center z-10 transition-all ease-in-out delay-100 " +
+                ((pathname === "/" && offset > 50) || pathname !== "/"
+                    ? "bg-opacity-100 bg-white "
+                    : "bg-transparent ")
+            }
+        >
             <div className="grow basis-0 hidden sm:flex justify-start">
-                {" "}
                 <Link href="/" className="header2 text-pinkText">
                     EBIZZ
                 </Link>
             </div>
-            <div className="bg-grayBg p-[5px] rounded-3xl flex gap-4 text-grayText transition ease-in-out font-semibold text-sm">
+            <nav className="bg-grayBg p-[5px] rounded-3xl flex gap-4 text-grayText transition ease-in-out font-semibold text-sm">
                 <Link
                     href="/"
                     className={pathname === "/" ? "navItemActive" : "navItem"}
@@ -37,7 +55,7 @@ export default function Navbar() {
                 >
                     My Card
                 </Link>
-            </div>
+            </nav>
             <div className="gap-4 items-center hidden sm:flex grow basis-0 justify-end">
                 <Link
                     href="/login"
@@ -47,11 +65,11 @@ export default function Navbar() {
                 </Link>
                 <Link
                     href="/signup"
-                    className="border rounded-md border-pinkText px-4 py-2 flex justify-center text-sm items-center text-black hover:bg-pinkText hover:text-white active:bg-pinkDark active:border-pinkDark"
+                    className="self-start px-4 py-2 text-sm bg-black text-white rounded-md hover:drop-shadow-lg font-bold"
                 >
                     Signup
                 </Link>
             </div>
-        </nav>
+        </header>
     );
 }

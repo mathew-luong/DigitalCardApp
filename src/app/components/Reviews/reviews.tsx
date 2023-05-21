@@ -1,12 +1,15 @@
 import Image from "next/image";
-import img from "../../../../public/howItsMade.jpg";
+import img from "../../../../public/images/pictures/information.svg";
 
 export default function Reviews() {
     return (
-        <section className="flex flex-col px-16 md:px-36 lg:px-48 py-16">
-            <div className="flex flex-col sm:flex-row sm:justify-between gap-8 sm:gap-32">
-                <div className="sm:w-[50%]">
-                    <h1 className="header mb-4">How it Works</h1>
+        <section className="flex flex-col px-12 md:px-36 lg:px-48 py-16 xl:px-48 2xl:px-56">
+            <div className="grid grid-cols-1 md:grid-cols-2 grid-flow-row gap-8 justify-items-center items-center">
+                <div className="">
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ec4899] to-[#6366f1] font-bold text-lg">
+                        Designed for everyone
+                    </span>
+                    <h1 className="lgHeader my-4">How it Works</h1>
                     <p className="text-grayText">
                         Digital business cards are the new modern way to share
                         and network. With eBizz you can create a business card
@@ -14,13 +17,16 @@ export default function Reviews() {
                         code or link.
                     </p>
                 </div>
-                <Image
-                    src={img}
-                    width={500}
-                    // height={250}
-                    alt="How its made image"
-                    className="rounded-full max-w-full h-56 self-center"
-                ></Image>
+                <div className="flex">
+                    <Image
+                        src={img}
+                        width={500}
+                        // height={250}
+                        priority
+                        alt="How its made image"
+                        className="max-w-full self-center h-[90%]"
+                    ></Image>
+                </div>
             </div>
             <hr className="text-gray my-12"></hr>
             <div>
