@@ -19,8 +19,8 @@ export default function ReviewCarousel() {
                 disableOnInteraction: true,
             }}
             pagination={{ clickable: true }}
-            onSwiper={(swiper) => console.log(swiper)}
-            onSlideChange={() => console.log("slide change")}
+            // onSwiper={(swiper) => console.log(swiper)}
+            // onSlideChange={() => console.log("slide change")}
             className="w-full h-full"
         >
             <SwiperSlide className="text-center flex justify-center items-center mb-8">

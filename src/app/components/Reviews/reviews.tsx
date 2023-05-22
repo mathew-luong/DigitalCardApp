@@ -37,7 +37,7 @@ export default function Reviews() {
                     ></Image>
                 </div>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 grid-flow-row gap-8 justify-items-center items-center my-16">
+            <div className="grid grid-cols-1 md:grid-cols-2 grid-flow-row gap-8 justify-items-center items-center my-16 md:my-24">
                 <div className="flex">
                     <Image
                         src={card}

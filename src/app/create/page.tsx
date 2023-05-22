@@ -46,9 +46,9 @@ export default function Login() {
     return (
         <article>
             <Navbar />
-            <div className="h-full pt-20 flex flex-col md:flex-row">
+            <div className="h-full pt-36 flex flex-col md:flex-row">
                 {/* <div className="h-screen flex flex-col md:flex-row"> */}
-                <section className="bg-white flex-grow flex justify-center items-center md:w-full md:mr-[55%] lg:mr-[33%] gap-6 md:min-h-full md:overflow-scroll overflow-y-visible py-8">
+                <section className="bg-white flex-grow flex justify-center items-center md:w-full md:mr-[55%] lg:mr-[33%] gap-6 md:min-h-full md:overflow-scroll overflow-y-visible pb-8">
                     {/* <section className="bg-white flex-grow flex justify-center items-center gap-6 md:min-h-full md:overflow-scroll overflow-y-visible py-8"> */}
                     <div className="flex flex-col gap-6 w-[85%] md:w-[60%] xl:w-[45%]">
                         <div>
