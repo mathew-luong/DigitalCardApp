@@ -1,10 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import phone from "../../../../public/images/pictures/phone.svg";
-import hero from "../../../../public/images/pictures/hero.svg";
+import hero from "../../../../public/images/pictures/heroPic.svg";
+// import hero from "../../../../public/images/pictures/introHero.svg";
 import { IoArrowForwardOutline } from "react-icons/io5";
 import { IoIosArrowForward } from "react-icons/io";
-import AnimSlide from "../Animations/animSlide";
 import SlideUp from "../Animations/animSlideUp";
 
 export default function Intro() {
@@ -25,7 +25,7 @@ export default function Intro() {
                     <SlideUp>
                         <p className="text-grayText sm:max-w-[60ch] md:max-w-[40ch] 2xl:max-w-[65ch]">
                             Digital business cards are the new modern way to
-                            share and network. With eBizz you can create a
+                            share and network. With CVNNECT you can create a
                             business card in less than 5 minutes and share it
                             with others by QR code or link.
                         </p>
@@ -33,7 +33,7 @@ export default function Intro() {
                     <SlideUp>
                         <Link
                             href="/login"
-                            className="inline-flex items-center self-start gap-2 px-4 py-2 mt-4 font-bold text-white bg-black rounded-md hover:drop-shadow-xl group"
+                            className="inline-flex items-center self-start gap-2 px-4 py-2 mt-4 mb-[8px] mr-[8px] font-bold text-white bg-black rounded-md hover:drop-shadow-lg group"
                         >
                             Get started
                             <IoArrowForwardOutline
@@ -55,7 +55,7 @@ export default function Intro() {
                         // height={250}
                         priority
                         alt="How its made image"
-                        className="max-w-full h-[90%] block md:hidden lg:block"
+                        className="max-w-full h-[100%] block md:hidden lg:block"
                     ></Image>
                     <Image
                         src={phone}

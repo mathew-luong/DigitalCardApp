@@ -34,7 +34,9 @@ export default function Navbar() {
         >
             <div className="grow basis-0 sm:flex sm:justify-start">
                 <Link href="/" className="header2 sm:text-[1.5rem] colorText">
-                    <span className={font.className}>CVNNECT</span>
+                    <span className={font.className + " active:text-pinkText"}>
+                        CVNNECT
+                    </span>
                 </Link>
             </div>
             <NavSlider />

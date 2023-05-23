@@ -14,7 +14,7 @@ export default function Home() {
             <Content />
             <Featured />
             <Reviews />
-            <Details />
+            {/* <Details /> */}
             <Footer />
         </main>
     );

@@ -1,4 +1,12 @@
-import SlideUp from "../Animations/animSlideUp";
+import Image from "next/image";
+import youtube from "../../../../public/images/brands/youtube.svg";
+import spotify from "../../../../public/images/brands/spotify.svg";
+import google from "../../../../public/images/brands/google.svg";
+import netflix from "../../../../public/images/brands/netflix.svg";
+import coke from "../../../../public/images/brands/coca-cola.svg";
+import cisco from "../../../../public/images/brands/cisco.svg";
+import visa from "../../../../public/images/brands/visa.svg";
+import levis from "../../../../public/images/brands/levis.svg";
 
 export default function Featured() {
     return (
@@ -6,60 +14,60 @@ export default function Featured() {
             <h1 className="font-bold text-white">As featured in</h1>
             <div className="grid w-full grid-flow-row gap-12 text-white gap-y-6 grid-cols-fluid place-items-center">
                 <div>
-                    <img
-                        src="/images/brands/youtube.svg"
+                    <Image
+                        src={youtube}
                         alt="YouTube logo"
                         className="object-contain h-20 w-30 opacity-70 hover:opacity-100"
-                    ></img>
+                    ></Image>
                 </div>
                 <div>
-                    <img
-                        src="/images/brands/spotify.svg"
+                    <Image
+                        src={spotify}
                         alt="Spotify logo"
                         className="object-contain h-20 w-30 opacity-70 hover:opacity-100"
-                    ></img>
+                    ></Image>
                 </div>
                 <div>
-                    <img
-                        src="/images/brands/google.svg"
+                    <Image
+                        src={google}
                         alt="Google logo"
                         className="object-contain h-20 w-30 opacity-70 hover:opacity-100"
-                    ></img>
+                    ></Image>
                 </div>
                 <div>
-                    <img
-                        src="/images/brands/coca-cola.svg"
-                        alt="Coca Cola logo"
+                    <Image
+                        src={coke}
+                        alt="Coca-Cola logo"
                         className="object-contain h-20 w-30 opacity-70 hover:opacity-100"
-                    ></img>
+                    ></Image>
                 </div>
                 <div>
-                    <img
-                        src="/images/brands/netflix.svg"
+                    <Image
+                        src={netflix}
                         alt="Netflix logo"
                         className="object-contain h-20 w-30 opacity-70 hover:opacity-100"
-                    ></img>
+                    ></Image>
                 </div>
                 <div>
-                    <img
-                        src="/images/brands/visa.svg"
+                    <Image
+                        src={visa}
                         alt="Visa logo"
                         className="object-contain h-20 w-30 opacity-70 hover:opacity-100"
-                    ></img>
+                    ></Image>
                 </div>
                 <div>
-                    <img
-                        src="/images/brands/cisco.svg"
+                    <Image
+                        src={cisco}
                         alt="Cisco logo"
                         className="object-contain h-20 w-30 opacity-70 hover:opacity-100"
-                    ></img>
+                    ></Image>
                 </div>
                 <div>
-                    <img
-                        src="/images/brands/levis.svg"
+                    <Image
+                        src={levis}
                         alt="Levis logo"
                         className="object-contain h-20 w-30 opacity-70 hover:opacity-100"
-                    ></img>
+                    ></Image>
                 </div>
             </div>
         </section>

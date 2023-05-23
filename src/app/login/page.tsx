@@ -4,6 +4,8 @@ import { useForm, SubmitHandler, FieldValues } from "react-hook-form";
 import { FcGoogle } from "react-icons/fc";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import logo from "../../../public/images/Logo.svg";
+import Image from "next/image";
 
 export default function Login() {
     const router = useRouter();
@@ -35,7 +37,12 @@ export default function Login() {
         <div className="flex h-screen">
             <BackBtn />
             <section className="bg-gradientBg text-white hidden md:flex w-1/3 w-max-[33rem] flex-col h-full justify-center items-center p-16">
-                <h1 className="mb-6 text-center header">EBIZZ</h1>
+                <Image
+                    src={logo}
+                    alt="CVVNECT logo"
+                    width={150}
+                    className="justify-center mb-6"
+                ></Image>
                 <h2 className="text-center subHeader">Welcome Back.</h2>
             </section>
             <section className="flex items-center justify-center flex-grow min-h-full gap-6 text-center bg-white">

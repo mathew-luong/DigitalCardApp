@@ -2,22 +2,22 @@ import Link from "next/link";
 import { FaFacebookSquare, FaTwitter } from "react-icons/fa";
 import { AiFillInstagram, AiFillYoutube } from "react-icons/ai";
 import { Train_One } from "next/font/google";
+import logo from "../../../../public/images/Logo.svg";
+import Image from "next/image";
 
 // logo font
 const font = Train_One({ weight: "400", subsets: ["latin"] });
 
 export default function Footer() {
     return (
-        <footer className="flex flex-col justify-between gap-6 px-12 py-10 bg-brownBg sm:gap-0 sm:flex-row sm:px-12 md:px-28 lg:px-36 xl:px-48 2xl:px-72">
-            {/* <h1 className="block bg-white header2 sm:hidden lg:block">
-                <span className={font.className + " colorText"}>CVNNECT</span>
-            </h1> */}
+        <footer className="flex flex-col justify-between gap-6 px-12 py-10 bg-black sm:gap-0 sm:flex-row sm:px-12 md:px-28 lg:px-36 xl:px-48 2xl:px-72">
             <div className="flex items-start justify-center sm:hidden lg:flex">
-                <img
-                    src="/images/logo.svg"
+                <Image
+                    src={logo}
+                    width={150}
                     alt="CVVNECT logo"
-                    className="object-contain w-[150px]"
-                ></img>
+                    className="object-contain"
+                ></Image>
             </div>
             <div className="flex flex-col gap-2">
                 <span className="font-semibold text-white">Company</span>

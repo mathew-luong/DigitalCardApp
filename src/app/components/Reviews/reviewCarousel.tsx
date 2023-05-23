@@ -23,17 +23,17 @@ export default function ReviewCarousel() {
         >
             <SwiperSlide className="flex items-center justify-center mb-8 text-center">
                 <h1 className="mb-4 font-bold header2">
-                    “Having a digital business card at the palm of my hands has
-                    been a game changer. The ease of use and level of
-                    customization is incredible!”
+                    &quot;Having a digital business card at the palm of my hands
+                    has been a game changer. The ease of use is truly
+                    incredible!&quot;
                 </h1>
                 <h2 className="text-grayText">Mathew L, CEO of MovieFinder</h2>
             </SwiperSlide>
             <SwiperSlide className="flex items-center justify-center mb-8 text-center">
                 <h1 className="mb-4 font-bold header2">
-                    “Time savings is the most important thing for us. It&apos;s
-                    been massive. I can share with 50 people in five seconds
-                    with eBizz. It truly is amazing!”
+                    &quot;Time savings is very important for us. It&apos;s been
+                    massive. I can share with 50 people in five seconds with
+                    CVNNECT.&quot;
                 </h1>
                 <h2 className="text-grayText">
                     Dwayne Johnson, President of Facebook
@@ -41,9 +41,9 @@ export default function ReviewCarousel() {
             </SwiperSlide>
             <SwiperSlide className="flex items-center justify-center mb-8 text-center">
                 <h1 className="mb-4 font-bold header2">
-                    “Ever since I started using eBizz my life has been so much
-                    easier. Now I can network quicker than ever and make life
-                    long connections!”
+                    &quot;Since I started using CVNNECT I&apos;ve loved it. Now
+                    I can network quicker than ever and make life long
+                    friends!&quot;
                 </h1>
                 <h2 className="text-grayText">Nico G, Enterpreneur</h2>
             </SwiperSlide>
