@@ -46,13 +46,13 @@ export default function Login() {
     return (
         <article>
             <Navbar />
-            <div className="h-full pt-36 flex flex-col md:flex-row">
-                {/* <div className="h-screen flex flex-col md:flex-row"> */}
+            <div className="flex flex-col h-full pt-40 md:flex-row">
+                {/* <div className="flex flex-col h-screen md:flex-row"> */}
                 <section className="bg-white flex-grow flex justify-center items-center md:w-full md:mr-[55%] lg:mr-[33%] gap-6 md:min-h-full md:overflow-scroll overflow-y-visible pb-8">
-                    {/* <section className="bg-white flex-grow flex justify-center items-center gap-6 md:min-h-full md:overflow-scroll overflow-y-visible py-8"> */}
+                    {/* <section className="flex items-center justify-center flex-grow gap-6 py-8 overflow-y-visible bg-white md:min-h-full md:overflow-scroll"> */}
                     <div className="flex flex-col gap-6 w-[85%] md:w-[60%] xl:w-[45%]">
                         <div>
-                            <h1 className="header2 mb-4">
+                            <h1 className="mb-4 header2">
                                 Your Details
                                 <span className="text-pinkText ml-[2px]">
                                     .
@@ -177,7 +177,7 @@ export default function Login() {
                                     numbers.
                                 </span>
                             )}
-                            <h2 className="subHeader font-bold mt-4">
+                            <h2 className="mt-4 font-bold subHeader">
                                 Additional Details
                             </h2>
                             <div>
@@ -245,7 +245,7 @@ export default function Login() {
                             </div>
                             <button
                                 type="submit"
-                                className="inline-flex justify-center px-4 py-2 bg-black text-white rounded-md mt-6 hover:drop-shadow-lg font-bold mb-8"
+                                className="inline-flex justify-center px-4 py-2 mt-6 mb-8 font-bold text-white bg-black rounded-md hover:drop-shadow-lg"
                                 aria-label="Submit"
                             >
                                 Save Changes

@@ -14,7 +14,7 @@ export default function AnimSlide({
     const isInView = useInView(ref, { once: true });
 
     return (
-        <div ref={ref} className="overflow-hidden box-border w-full ">
+        <div ref={ref} className="box-border w-full overflow-hidden ">
             <span
                 style={{
                     transform: isInView ? "none" : `translateX(${direction})`,

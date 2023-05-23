@@ -2,9 +2,12 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState, useEffect, useRef } from "react";
-import AnimExpand from "../Animations/animExpand";
-import NavSlider from "./nav";
+import { useState, useEffect } from "react";
+import NavSlider from "./navSlider";
+import { Train_One } from "next/font/google";
+
+// logo font
+const font = Train_One({ weight: "400", subsets: ["latin"] });
 
 export default function Navbar() {
     const pathname = usePathname();
@@ -23,28 +26,28 @@ export default function Navbar() {
     return (
         <header
             className={
-                "fixed top-0 w-full flex justify-center flex-col sm:flex-row sm:justify-between px-8 md:px-16 2xl:px-56 gap-4 sm:gap-0 py-4 sm:py-8 items-center z-10 transition-all ease-in-out delay-100 " +
+                "fixed top-0 w-full flex justify-center flex-col sm:flex-row sm:justify-between px-12 md:px-28 lg:px-36 xl:px-48 2xl:px-72 gap-4 sm:gap-0 py-4 sm:py-6 items-center z-50 transition-all ease-in-out delay-100 " +
                 ((pathname === "/" && offset > 1) || pathname !== "/"
                     ? "bg-opacity-100 bg-white "
                     : "bg-transparent ")
             }
         >
             <div className="grow basis-0 sm:flex sm:justify-start">
-                <Link href="/" className="header2 text-pinkText">
-                    EBIZZ
+                <Link href="/" className="header2 sm:text-[1.5rem] colorText">
+                    <span className={font.className}>CVNNECT</span>
                 </Link>
             </div>
             <NavSlider />
-            <div className="gap-4 items-center hidden sm:flex grow basis-0 justify-end">
+            <div className="items-center justify-end hidden gap-4 sm:flex grow basis-0">
                 <Link
                     href="/login"
-                    className="font-bold active:text-slate-300 text-sm"
+                    className="text-sm font-bold active:text-slate-600"
                 >
                     Login
                 </Link>
                 <Link
                     href="/signup"
-                    className="self-start px-4 py-2 text-sm bg-black text-white rounded-md hover:drop-shadow-lg font-bold"
+                    className="self-start px-4 py-2 text-sm font-bold text-white bg-black rounded-md hover:drop-shadow-lg"
                 >
                     Signup
                 </Link>

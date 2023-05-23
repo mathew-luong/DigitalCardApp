@@ -32,16 +32,16 @@ export default function Login() {
     };
 
     return (
-        <div className="h-screen flex">
+        <div className="flex h-screen">
             <BackBtn />
-            <section className="bg-gradientBg text-white hidden md:flex w-1/3 w-max-[33rem] flex-col h-full justify-center items-center containerPadding">
-                <h1 className="mb-6 header text-center">EBIZZ</h1>
-                <h2 className="subHeader text-center">Welcome Back.</h2>
+            <section className="bg-gradientBg text-white hidden md:flex w-1/3 w-max-[33rem] flex-col h-full justify-center items-center p-16">
+                <h1 className="mb-6 text-center header">EBIZZ</h1>
+                <h2 className="text-center subHeader">Welcome Back.</h2>
             </section>
-            <section className="bg-white flex-grow flex justify-center items-center text-center gap-6 min-h-full">
+            <section className="flex items-center justify-center flex-grow min-h-full gap-6 text-center bg-white">
                 <div className="flex flex-col gap-6 w-[85%] md:w-[60%] xl:w-[45%]">
                     <div>
-                        <h1 className="header2 mb-4">
+                        <h1 className="mb-4 header2">
                             Login
                             <span className="text-pinkText ml-[2px]">.</span>
                         </h1>
@@ -99,7 +99,7 @@ export default function Login() {
                         ></input>
                         <button
                             type="submit"
-                            className="inline-flex justify-center px-4 py-2 bg-black text-white rounded-md mt-6 hover:drop-shadow-xl font-bold"
+                            className="inline-flex justify-center px-4 py-2 mt-6 font-bold text-white bg-black rounded-md hover:drop-shadow-xl"
                             aria-label="Submit"
                         >
                             Login
