@@ -65,7 +65,7 @@ export default function SlideUp({
                         ease: "easeIn",
                         delay: delayTime - 0.25,
                     }}
-                    className="absolute left-0 right-0 z-20 top-1 bottom-1 bg-pinkText"
+                    className="absolute left-0 right-0 z-20 bg-pinkText top-1 bottom-1"
                 ></motion.div>
             )}
         </div>

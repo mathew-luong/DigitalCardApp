@@ -10,7 +10,7 @@ import SlideUp from "../Animations/animSlideUp";
 
 export default function Reviews() {
     return (
-        <section className="flex flex-col px-12 py-16 md:px-28 lg:px-36 xl:px-48 2xl:px-72">
+        <section className="flex flex-col py-16 px-12 md:px-28 lg:px-36 xl:px-48 2xl:px-72 3xl:px-[25%]">
             <div className="grid items-center grid-flow-row grid-cols-1 gap-8 md:grid-cols-2 justify-items-center">
                 <div>
                     <SlideUp shapeAnim delayTime={0.5}>

@@ -1,27 +1,28 @@
 import Image from "next/image";
 import Link from "next/link";
-import phone from "../../../../public/images/pictures/phone.svg";
+import phone from "../../../../public/images/pictures/heroPicTall.svg";
 import hero from "../../../../public/images/pictures/heroPic.svg";
-// import hero from "../../../../public/images/pictures/introHero.svg";
 import { IoArrowForwardOutline } from "react-icons/io5";
 import { IoIosArrowForward } from "react-icons/io";
 import SlideUp from "../Animations/animSlideUp";
+import BackgroundBlur from "../backgroundBlur";
+import AnimRotate from "../Animations/animRotate";
 
 export default function Intro() {
     return (
-        <section className="px-12 pt-40 pb-16 md:px-28 lg:px-36 xl:px-48 2xl:px-72 z-1">
+        <section className="px-12 pt-40 pb-16 md:px-28 lg:px-36 xl:px-48 2xl:px-72 z-1 3xl:px-[25%]">
+            {/* <BackgroundBlur direction="right" /> */}
+            {/* <BackgroundBlur direction="left" /> */}
             <div className="grid grid-flow-row grid-cols-1 gap-8 md:grid-cols-2 place-items-center">
                 <div className="flex flex-col gap-6">
-                    <SlideUp>
+                    <AnimRotate direction={-5}>
                         <h1 className="lgHeader">
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ec4899] to-[#6366f1] md:mix-blend-difference">
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ec4899] to-[#6366f1]">
                                 Share with others.
                             </span>{" "}
-                            <span className="md:mix-blend-difference">
-                                Anywhere. Anytime.
-                            </span>
+                            Anywhere. Anytime.
                         </h1>
-                    </SlideUp>
+                    </AnimRotate>
                     <SlideUp>
                         <p className="text-grayText sm:max-w-[60ch] md:max-w-[40ch] 2xl:max-w-[65ch]">
                             Digital business cards are the new modern way to
@@ -47,8 +48,7 @@ export default function Intro() {
                         </Link>
                     </SlideUp>
                 </div>
-
-                <div className="containerBg">
+                <AnimRotate>
                     <Image
                         src={hero}
                         width={500}
@@ -65,17 +65,7 @@ export default function Intro() {
                         alt="How its made image"
                         className="max-w-full max-h-[30rem] hidden md:block lg:hidden"
                     ></Image>
-                </div>
-                {/* <div className="max-w-full h-[25rem] w-[80%] backdrop-blur-md bg-white/30 rounded-md flex justify-center items-center">
-                    <Image
-                        src={img}
-                        width={500}
-                        // height={250}
-                        priority
-                        alt="How its made image"
-                        className="max-w-full h-[85%] w-[90%] rounded-full"
-                    ></Image>
-                </div> */}
+                </AnimRotate>
             </div>
         </section>
     );

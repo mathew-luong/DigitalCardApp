@@ -4,51 +4,13 @@ import { usePathname } from "next/navigation";
 
 const duration = 0.4;
 
-interface ItemProps {
-    name: string;
-    path: string;
-    currPath: string;
-    classes?: string;
-}
-
-const AnimatedNavItem = (props: ItemProps) => {
-    const { name, path, currPath, classes } = props;
-
-    console.log("THIS IS PATH:", path);
-
-    return (
-        <motion.div
-            className={
-                "h-8 py-0 px-4 rounded-3xl flex items-center justify-center relative" +
-                classes
-            }
-            animate={{
-                color: currPath === path ? "#000" : "#686868",
-            }}
-            transition={{ duration }}
-        >
-            <Link href={path} className="relative z-10">
-                {name}
-            </Link>
-            {currPath === path && (
-                <motion.div
-                    className="bg-white w-full h-full absolute rounded-3xl top-0 left-0"
-                    layoutId="selected"
-                    animate={{ backgroundColor: "#fff" }}
-                    transition={{ duration }}
-                ></motion.div>
-            )}
-        </motion.div>
-    );
-};
-
 export default function NavSlider() {
     const pathname = usePathname();
 
     return (
         <nav className="bg-grayBg p-[5px] rounded-3xl flex gap-2 text-grayText font-semibold text-sm relative items-start content-start justify-start">
             <motion.div
-                className="h-8 py-0 px-4 rounded-3xl flex items-center justify-center relative"
+                className="relative flex items-center justify-center h-8 px-4 py-0 rounded-3xl"
                 animate={{
                     color: pathname === "/" ? "#000" : "#686868",
                 }}
@@ -59,7 +21,7 @@ export default function NavSlider() {
                 </Link>
                 {pathname === "/" && (
                     <motion.div
-                        className="bg-white w-full h-full absolute rounded-3xl top-0 left-0"
+                        className="absolute top-0 left-0 w-full h-full bg-white rounded-3xl"
                         layoutId="selected"
                         animate={{ backgroundColor: "#fff" }}
                         transition={{ duration }}
@@ -67,7 +29,7 @@ export default function NavSlider() {
                 )}
             </motion.div>
             <motion.div
-                className="h-8 py-0 px-4 rounded-3xl flex items-center justify-center relative"
+                className="relative flex items-center justify-center h-8 px-4 py-0 rounded-3xl"
                 animate={{
                     color: pathname === "/create" ? "#000" : "#686868",
                 }}
@@ -78,7 +40,7 @@ export default function NavSlider() {
                 </Link>
                 {pathname === "/create" && (
                     <motion.div
-                        className="bg-white w-full h-full absolute rounded-3xl top-0 left-0"
+                        className="absolute top-0 left-0 w-full h-full bg-white rounded-3xl"
                         layoutId="selected"
                         animate={{ backgroundColor: "#fff" }}
                         transition={{ duration }}
@@ -86,7 +48,7 @@ export default function NavSlider() {
                 )}
             </motion.div>
             <motion.div
-                className="h-8 py-0 px-4 rounded-3xl flex items-center justify-center relative"
+                className="relative flex items-center justify-center h-8 px-4 py-0 rounded-3xl"
                 animate={{
                     color: pathname === "/card" ? "#000" : "#686868",
                 }}
@@ -97,7 +59,7 @@ export default function NavSlider() {
                 </Link>
                 {pathname === "/card" && (
                     <motion.div
-                        className="bg-white w-full h-full absolute rounded-3xl top-0 left-0"
+                        className="absolute top-0 left-0 w-full h-full bg-white rounded-3xl"
                         layoutId="selected"
                         animate={{ backgroundColor: "#fff" }}
                         transition={{ duration }}
@@ -105,7 +67,7 @@ export default function NavSlider() {
                 )}
             </motion.div>
             <motion.div
-                className="h-8 py-0 px-4 rounded-3xl items-center justify-center relative flex sm:hidden"
+                className="relative flex items-center justify-center h-8 px-4 py-0 rounded-3xl sm:hidden"
                 animate={{
                     color: pathname === "/login" ? "#000" : "#686868",
                 }}
@@ -116,7 +78,7 @@ export default function NavSlider() {
                 </Link>
                 {pathname === "/login" && (
                     <motion.div
-                        className="bg-white w-full h-full absolute rounded-3xl top-0 left-0"
+                        className="absolute top-0 left-0 w-full h-full bg-white rounded-3xl"
                         layoutId="selected"
                         animate={{ backgroundColor: "#fff" }}
                         transition={{ duration }}

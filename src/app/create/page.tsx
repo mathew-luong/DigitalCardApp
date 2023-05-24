@@ -47,8 +47,8 @@ export default function Login() {
         <article>
             <Navbar />
             <div className="flex flex-col h-full pt-40 md:flex-row">
-                {/* <div className="flex flex-col h-screen md:flex-row"> */}
-                <section className="bg-white flex-grow flex justify-center items-center md:w-full md:mr-[55%] lg:mr-[33%] gap-6 md:min-h-full md:overflow-scroll overflow-y-visible pb-8">
+                <section className="bg-white flex-grow mt-6 md:mt-0 flex justify-center items-center md:w-full md:mr-[55%] lg:mr-[33%] gap-6 md:min-h-full md:overflow-scroll overflow-y-visible pb-8">
+                    {/* CENTER INPUT SECTION */}
                     {/* <section className="flex items-center justify-center flex-grow gap-6 py-8 overflow-y-visible bg-white md:min-h-full md:overflow-scroll"> */}
                     <div className="flex flex-col gap-6 w-[85%] md:w-[60%] xl:w-[45%]">
                         <div>
@@ -253,7 +253,7 @@ export default function Login() {
                         </form>
                     </div>
                 </section>
-                <section className="bg-gradientBg text-white w-full p-8 md:w-[45%] lg:w-[30%] 2xl:w-[30%] md:flex items-center md:fixed md:right-0 md:top-20 md:bottom-0 md:p-0">
+                <section className="order-first md:order-last bg-gradientBg text-white w-full p-8 md:w-[45%] lg:w-[30%] 2xl:w-[30%] md:flex items-center md:fixed md:right-0 md:top-20 md:bottom-0 md:p-0">
                     <BusinessCard />
                 </section>
                 {/* <section>Hey</section> */}

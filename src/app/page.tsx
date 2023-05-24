@@ -8,7 +8,7 @@ import Reviews from "./components/Reviews/reviews";
 
 export default function Home() {
     return (
-        <main className="h-screen">
+        <main className="w-full h-full">
             <Navbar />
             <Intro />
             <Content />
