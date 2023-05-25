@@ -46,7 +46,7 @@ export default function Login() {
     return (
         <article>
             <Navbar />
-            <div className="flex flex-col h-full pt-40 md:flex-row">
+            <div className="flex flex-col h-full pt-40 sm:pt-32 md:pt-36 md:flex-row">
                 <section className="bg-white flex-grow mt-6 md:mt-0 flex justify-center items-center md:w-full md:mr-[55%] lg:mr-[33%] gap-6 md:min-h-full md:overflow-scroll overflow-y-visible pb-8">
                     {/* CENTER INPUT SECTION */}
                     {/* <section className="flex items-center justify-center flex-grow gap-6 py-8 overflow-y-visible bg-white md:min-h-full md:overflow-scroll"> */}
@@ -104,9 +104,15 @@ export default function Login() {
                                 </div>
                             </div>
                             <div>
-                                <label htmlFor="email" className="font-bold">
+                                <label
+                                    htmlFor="email"
+                                    className="float-left font-bold"
+                                >
                                     Email
                                 </label>
+                                <span className="float-right text-sm italic text-grayText">
+                                    name@mail.com
+                                </span>
                                 <input
                                     id="email"
                                     placeholder="Email"
@@ -117,9 +123,15 @@ export default function Login() {
                                 ></input>
                             </div>
                             <div>
-                                <label htmlFor="phone" className="font-bold">
+                                <label
+                                    htmlFor="phone"
+                                    className="float-left font-bold"
+                                >
                                     Phone number
                                 </label>
+                                <span className="float-right text-sm italic text-grayText">
+                                    ###-###-####
+                                </span>
                                 <input
                                     id="phone"
                                     placeholder="Phone number"
@@ -127,7 +139,7 @@ export default function Login() {
                                     className="px-4 py-2 rounded-md border-[1px] border-gray w-full"
                                     required
                                     {...(register("phone"),
-                                    { pattern: "[0-9]{3}[0-9]{3}[0-9]{4}" })}
+                                    { pattern: "[0-9]{3}-[0-9]{3}-[0-9]{4}" })}
                                 ></input>
                                 {/* errors will return when field validation fails  */}
                                 {errors.phone && (
@@ -157,10 +169,13 @@ export default function Login() {
                                 <div className="w-1/2">
                                     <label
                                         htmlFor="company"
-                                        className="mt-2 font-bold"
+                                        className="float-left font-bold"
                                     >
                                         Company
                                     </label>
+                                    <span className="float-right text-sm italic text-grayText">
+                                        optional
+                                    </span>
                                     <input
                                         id="company"
                                         placeholder="Company"
@@ -178,12 +193,18 @@ export default function Login() {
                                 </span>
                             )}
                             <h2 className="mt-4 font-bold subHeader">
-                                Additional Details
+                                Optional Details
                             </h2>
                             <div>
-                                <label htmlFor="website" className="font-bold">
+                                <label
+                                    htmlFor="website"
+                                    className="float-left font-bold"
+                                >
                                     Website
                                 </label>
+                                <span className="float-right text-sm italic text-grayText">
+                                    URL
+                                </span>
                                 <input
                                     id="website"
                                     placeholder="Website"
@@ -193,9 +214,15 @@ export default function Login() {
                                 ></input>
                             </div>
                             <div>
-                                <label htmlFor="linkedin" className="font-bold">
+                                <label
+                                    htmlFor="linkedin"
+                                    className="float-left font-bold"
+                                >
                                     LinkedIn
                                 </label>
+                                <span className="float-right text-sm italic text-grayText">
+                                    URL
+                                </span>
                                 <input
                                     id="linkedin"
                                     placeholder="LinkedIn"
@@ -205,9 +232,15 @@ export default function Login() {
                                 ></input>
                             </div>
                             <div>
-                                <label htmlFor="twitter" className="font-bold">
+                                <label
+                                    htmlFor="twitter"
+                                    className="float-left font-bold"
+                                >
                                     Twitter
                                 </label>
+                                <span className="float-right text-sm italic text-grayText">
+                                    URL
+                                </span>
                                 <input
                                     id="twitter"
                                     placeholder="Twitter"
@@ -219,10 +252,13 @@ export default function Login() {
                             <div>
                                 <label
                                     htmlFor="instagram"
-                                    className="font-bold"
+                                    className="float-left font-bold"
                                 >
                                     Instagram
                                 </label>
+                                <span className="float-right text-sm italic text-grayText">
+                                    URL
+                                </span>
                                 <input
                                     id="instagram"
                                     placeholder="Instagram"
@@ -232,9 +268,15 @@ export default function Login() {
                                 ></input>
                             </div>
                             <div>
-                                <label htmlFor="facebook" className="font-bold">
+                                <label
+                                    htmlFor="facebook"
+                                    className="float-left font-bold"
+                                >
                                     Facebook
                                 </label>
+                                <span className="float-right text-sm italic text-grayText">
+                                    URL
+                                </span>
                                 <input
                                     id="facebook"
                                     placeholder="Facebook"
@@ -253,7 +295,7 @@ export default function Login() {
                         </form>
                     </div>
                 </section>
-                <section className="order-first md:order-last bg-gradientBg text-white w-full p-8 md:w-[45%] lg:w-[30%] 2xl:w-[30%] md:flex items-center md:fixed md:right-0 md:top-20 md:bottom-0 md:p-0">
+                <section className="order-first md:order-last sm:bg-gradientBg text-white w-full p-6 sm:p-8 md:w-[45%] lg:w-[30%] 2xl:w-[30%] md:flex items-center md:fixed md:right-0 md:top-20 md:bottom-0 md:p-0">
                     <BusinessCard />
                 </section>
                 {/* <section>Hey</section> */}

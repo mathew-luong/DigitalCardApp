@@ -5,7 +5,6 @@ import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 import NavSlider from "./navSlider";
 import { Train_One } from "next/font/google";
-import AnimExpand from "../Animations/animExpand";
 
 // logo font
 const font = Train_One({ weight: "400", subsets: ["latin"] });

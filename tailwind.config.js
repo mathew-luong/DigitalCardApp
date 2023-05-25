@@ -19,6 +19,7 @@ module.exports = {
                 "gradient-conic":
                     "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
                 gradientBg: "linear-gradient(250deg, #ec4899, #6366f1);",
+                gradientCard: "linear-gradient(250deg, #565656, #000000);",
             },
             colors: {
                 brownBg: "#6B6868",
