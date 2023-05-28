@@ -16,7 +16,10 @@ export default function NavSlider() {
                 }}
                 transition={{ duration }}
             >
-                <Link href="/" className="relative z-10">
+                <Link
+                    href="/"
+                    className="relative z-10 grid w-full h-full place-content-center"
+                >
                     Home
                 </Link>
                 {pathname === "/" && (
@@ -35,7 +38,10 @@ export default function NavSlider() {
                 }}
                 transition={{ duration }}
             >
-                <Link href="/create" className="relative z-10">
+                <Link
+                    href="/create"
+                    className="relative z-10 grid w-full h-full place-content-center"
+                >
                     Create
                 </Link>
                 {pathname === "/create" && (
@@ -54,7 +60,10 @@ export default function NavSlider() {
                 }}
                 transition={{ duration }}
             >
-                <Link href="/card" className="relative z-10">
+                <Link
+                    href="/card"
+                    className="relative z-10 grid w-full h-full place-content-center"
+                >
                     Card
                 </Link>
                 {pathname === "/card" && (
@@ -73,7 +82,10 @@ export default function NavSlider() {
                 }}
                 transition={{ duration }}
             >
-                <Link href="/login" className="relative z-10">
+                <Link
+                    href="/login"
+                    className="relative z-10 grid w-full h-full place-content-center"
+                >
                     Login
                 </Link>
                 {pathname === "/login" && (
@@ -85,15 +97,6 @@ export default function NavSlider() {
                     ></motion.div>
                 )}
             </motion.div>
-            {/* <AnimatedNavItem name="Home" path="/" currPath={pathname} /> */}
-            {/* <AnimatedNavItem name="Create" path="/create" currPath={pathname} />
-            <AnimatedNavItem name="Card" path="/card" currPath={pathname} />
-            <AnimatedNavItem
-                name="Login"
-                path="/login"
-                currPath={pathname}
-                classes=" flex sm:hidden"
-            /> */}
         </nav>
     );
 }

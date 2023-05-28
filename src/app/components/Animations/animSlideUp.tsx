@@ -39,8 +39,8 @@ export default function SlideUp({
             {/* Slide up animation */}
             <motion.div
                 variants={{
-                    hidden: { opacity: 0, y: 75 },
-                    visible: { opacity: 1, y: 0 },
+                    hidden: { opacity: 0, translateY: 75 },
+                    visible: { opacity: 1, translateY: 0 },
                 }}
                 initial="hidden"
                 animate={slideControls}

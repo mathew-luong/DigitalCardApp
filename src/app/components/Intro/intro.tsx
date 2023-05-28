@@ -14,45 +14,40 @@ export default function Intro() {
             {/* <BackgroundBlur direction="right" /> */}
             {/* <BackgroundBlur direction="left" /> */}
             <div className="grid grid-flow-row grid-cols-1 gap-8 md:grid-cols-2 place-items-center">
-                <div className="flex flex-col gap-6">
-                    <AnimRotate direction={-5}>
-                        <h1 className="lgHeader">
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ec4899] to-[#6366f1]">
-                                Share with others.
-                            </span>{" "}
-                            Anywhere. Anytime.
-                        </h1>
-                    </AnimRotate>
-                    <SlideUp>
-                        <p className="text-grayText sm:max-w-[60ch] md:max-w-[40ch] 2xl:max-w-[65ch]">
-                            Digital business cards are the new modern way to
-                            share and network. With CVNNECT you can create a
-                            business card in less than 5 minutes and share it
-                            with others by QR code or link.
-                        </p>
-                    </SlideUp>
-                    <SlideUp>
-                        <Link
-                            href="/login"
-                            className="inline-flex items-center self-start gap-2 px-4 py-2 mt-4 mb-[8px] mr-[8px] font-bold text-white bg-black rounded-md hover:drop-shadow-lg group"
-                        >
-                            Get started
-                            <IoArrowForwardOutline
-                                size="24"
-                                className="hidden w-4 group-hover:block"
-                            />
-                            <IoIosArrowForward
-                                size="24"
-                                className="block w-4 group-hover:hidden"
-                            />
-                        </Link>
-                    </SlideUp>
-                </div>
-                <AnimRotate>
+                <SlideUp>
+                    {/* <AnimRotate direction={-5}> */}
+                    <h1 className="lgHeader">
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ec4899] to-[#6366f1]">
+                            Share with others.
+                        </span>{" "}
+                        Anywhere. Anytime.
+                    </h1>
+                    {/* </AnimRotate> */}
+                    <p className="text-grayText sm:max-w-[60ch] md:max-w-[40ch] 2xl:max-w-[65ch] my-6">
+                        Digital business cards are the new modern way to share
+                        and network. With CVNNECT you can create a business card
+                        in less than 5 minutes and share it with others by QR
+                        code or link.
+                    </p>
+                    <Link
+                        href="/login"
+                        className="inline-flex items-center self-start gap-2 px-4 py-2 mt-4 mb-[8px] mr-[8px] font-bold text-white bg-black rounded-md hover:drop-shadow-lg group"
+                    >
+                        Get started
+                        <IoArrowForwardOutline
+                            size="24"
+                            className="hidden w-4 group-hover:block"
+                        />
+                        <IoIosArrowForward
+                            size="24"
+                            className="block w-4 group-hover:hidden"
+                        />
+                    </Link>
+                </SlideUp>
+                <AnimRotate direction={15}>
                     <Image
                         src={hero}
                         width={500}
-                        // height={250}
                         priority
                         alt="How its made image"
                         className="max-w-full h-[100%] block md:hidden lg:block"
@@ -60,7 +55,6 @@ export default function Intro() {
                     <Image
                         src={phone}
                         width={500}
-                        // height={250}
                         priority
                         alt="How its made image"
                         className="max-w-full max-h-[30rem] hidden md:block lg:hidden"

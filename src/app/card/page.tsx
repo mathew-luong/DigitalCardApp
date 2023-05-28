@@ -1,10 +1,14 @@
+import BackgroundBlur from "../components/backgroundBlur";
 import Navbar from "../components/Nav/navbar";
+import { CardSection } from "./cardSection";
 
 export default function Card() {
     return (
-        <div>
+        <div className="w-full h-full">
             <Navbar />
-            CARD PAGE
+            <BackgroundBlur direction="right" />
+            <BackgroundBlur direction="left" />
+            <CardSection />
         </div>
     );
 }

@@ -4,7 +4,7 @@ import { useForm, SubmitHandler, FieldValues } from "react-hook-form";
 import { FcGoogle } from "react-icons/fc";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import logo from "../../../public/images/Logo.svg";
+import logo from "../../../public/images/pictures/Logo.svg";
 import Image from "next/image";
 
 export default function Login() {

@@ -1,46 +1,46 @@
 "use client";
-import { useForm, SubmitHandler, FieldValues } from "react-hook-form";
+import { useState } from "react";
 import BusinessCard from "../components/businessCard";
 import Navbar from "../components/Nav/navbar";
 
 export default function Login() {
-    const {
-        register,
-        handleSubmit,
-        setError,
-        reset,
-        formState: { errors },
-    } = useForm<FieldValues>({
-        defaultValues: {
-            firstName: "",
-            lastName: "",
-            email: "",
-            phone: "",
-            title: "",
-            company: "",
-            website: "",
-            linkedin: "",
-            twitter: "",
-            instagram: "",
-            facebook: "",
-        },
+    // const [info, setInfo] = useState(getInfo)
+    const [info, setInfo] = useState({
+        firstName: "",
+        lastName: "",
+        title: "",
+        company: "",
+        email: "",
+        phone: "",
+        website: "",
+        linkedin: "",
+        twitter: "",
+        instagram: "",
+        facebook: "",
     });
 
-    const onSubmit: SubmitHandler<FieldValues> = (data) => {
+    // Updates the state for the corresponding form input field
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const value = e.target.value;
+        setInfo({ ...info, [e.target.id]: value });
+    };
+
+    const onSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
         console.log("SUBMITTED");
-        console.log(
-            data.firstName,
-            data.lastName,
-            data.email,
-            data.phone,
-            data.title,
-            data.company,
-            data.website,
-            data.linkedin,
-            data.twitter,
-            data.instagram,
-            data.facebook
-        );
+        // console.log(
+        //     data.firstName,
+        //     data.lastName,
+        //     data.email,
+        //     data.phone,
+        //     data.title,
+        //     data.company,
+        //     data.website,
+        //     data.linkedin,
+        //     data.twitter,
+        //     data.instagram,
+        //     data.facebook
+        // );
     };
 
     return (
@@ -65,7 +65,7 @@ export default function Login() {
                         </div>
                         <form
                             className="flex flex-col gap-4 text-start"
-                            onSubmit={handleSubmit(onSubmit)}
+                            onSubmit={onSubmit}
                         >
                             <div className="flex gap-4">
                                 <div className="w-1/2">
@@ -81,9 +81,8 @@ export default function Login() {
                                         type="text"
                                         className="px-4 py-2 rounded-md border-[1px] border-gray w-full"
                                         required
-                                        {...register("firstName", {
-                                            pattern: /^[A-Za-z0-9]*$/,
-                                        })}
+                                        value={info.firstName}
+                                        onChange={handleChange}
                                     ></input>
                                 </div>
                                 <div className="w-1/2">
@@ -99,54 +98,10 @@ export default function Login() {
                                         type="text"
                                         className="px-4 py-2 rounded-md border-[1px] border-gray w-full"
                                         required
-                                        {...register("lastName")}
+                                        value={info.lastName}
+                                        onChange={handleChange}
                                     ></input>
                                 </div>
-                            </div>
-                            <div>
-                                <label
-                                    htmlFor="email"
-                                    className="float-left font-bold"
-                                >
-                                    Email
-                                </label>
-                                <span className="float-right text-sm italic text-grayText">
-                                    name@mail.com
-                                </span>
-                                <input
-                                    id="email"
-                                    placeholder="Email"
-                                    type="email"
-                                    className="px-4 py-2 rounded-md border-[1px] border-gray w-full"
-                                    required
-                                    {...register("email")}
-                                ></input>
-                            </div>
-                            <div>
-                                <label
-                                    htmlFor="phone"
-                                    className="float-left font-bold"
-                                >
-                                    Phone number
-                                </label>
-                                <span className="float-right text-sm italic text-grayText">
-                                    ###-###-####
-                                </span>
-                                <input
-                                    id="phone"
-                                    placeholder="Phone number"
-                                    type="tel"
-                                    className="px-4 py-2 rounded-md border-[1px] border-gray w-full"
-                                    required
-                                    {...(register("phone"),
-                                    { pattern: "[0-9]{3}-[0-9]{3}-[0-9]{4}" })}
-                                ></input>
-                                {/* errors will return when field validation fails  */}
-                                {errors.phone && (
-                                    <span className="text-rose-500">
-                                        Phone number format 000-000-0000
-                                    </span>
-                                )}
                             </div>
                             <div className="flex gap-4">
                                 <div className="w-1/2">
@@ -160,10 +115,10 @@ export default function Login() {
                                         id="title"
                                         placeholder="Title"
                                         type="text"
+                                        required
+                                        value={info.title}
                                         className="px-4 py-2 rounded-md border-[1px] border-gray w-full"
-                                        {...register("title", {
-                                            pattern: /^[A-Za-z0-9]*$/,
-                                        })}
+                                        onChange={handleChange}
                                     ></input>
                                 </div>
                                 <div className="w-1/2">
@@ -181,17 +136,52 @@ export default function Login() {
                                         placeholder="Company"
                                         type="text"
                                         className="px-4 py-2 rounded-md border-[1px] border-gray w-full"
-                                        {...register("company")}
+                                        value={info.company}
+                                        onChange={handleChange}
                                     ></input>
                                 </div>
                             </div>
-                            {/* errors will return when field validation fails  */}
-                            {(errors.lastName || errors.firstName) && (
-                                <span className="text-rose-500">
-                                    Fields must only contain letters and/or
-                                    numbers.
+                            <div>
+                                <label
+                                    htmlFor="phone"
+                                    className="float-left font-bold"
+                                >
+                                    Phone number
+                                </label>
+                                <span className="float-right text-sm italic text-grayText">
+                                    1234567890
                                 </span>
-                            )}
+                                <input
+                                    id="phone"
+                                    placeholder="Phone number"
+                                    type="tel"
+                                    pattern="[0-9]{3}[0-9]{3}[0-9]{4}"
+                                    className="px-4 py-2 rounded-md border-[1px] border-gray w-full"
+                                    required
+                                    value={info.phone}
+                                    onChange={handleChange}
+                                ></input>
+                            </div>
+                            <div>
+                                <label
+                                    htmlFor="email"
+                                    className="float-left font-bold"
+                                >
+                                    Email
+                                </label>
+                                <span className="float-right text-sm italic text-grayText">
+                                    name@mail.com
+                                </span>
+                                <input
+                                    id="email"
+                                    placeholder="Email"
+                                    type="email"
+                                    className="px-4 py-2 rounded-md border-[1px] border-gray w-full"
+                                    required
+                                    value={info.email}
+                                    onChange={handleChange}
+                                ></input>
+                            </div>
                             <h2 className="mt-4 font-bold subHeader">
                                 Optional Details
                             </h2>
@@ -210,7 +200,8 @@ export default function Login() {
                                     placeholder="Website"
                                     type="url"
                                     className="px-4 py-2 rounded-md border-[1px] border-gray w-full"
-                                    {...register("website")}
+                                    value={info.website}
+                                    onChange={handleChange}
                                 ></input>
                             </div>
                             <div>
@@ -228,7 +219,8 @@ export default function Login() {
                                     placeholder="LinkedIn"
                                     type="url"
                                     className="px-4 py-2 rounded-md border-[1px] border-gray w-full"
-                                    {...register("linkedin")}
+                                    onChange={handleChange}
+                                    value={info.linkedin}
                                 ></input>
                             </div>
                             <div>
@@ -246,7 +238,8 @@ export default function Login() {
                                     placeholder="Twitter"
                                     type="url"
                                     className="px-4 py-2 rounded-md border-[1px] border-gray w-full"
-                                    {...register("twitter")}
+                                    value={info.twitter}
+                                    onChange={handleChange}
                                 ></input>
                             </div>
                             <div>
@@ -264,7 +257,8 @@ export default function Login() {
                                     placeholder="Instagram"
                                     type="url"
                                     className="px-4 py-2 rounded-md border-[1px] border-gray w-full"
-                                    {...register("instagram")}
+                                    value={info.instagram}
+                                    onChange={handleChange}
                                 ></input>
                             </div>
                             <div>
@@ -282,7 +276,8 @@ export default function Login() {
                                     placeholder="Facebook"
                                     type="url"
                                     className="px-4 py-2 rounded-md border-[1px] border-gray w-full"
-                                    {...register("facebook")}
+                                    value={info.facebook}
+                                    onChange={handleChange}
                                 ></input>
                             </div>
                             <button
@@ -296,9 +291,11 @@ export default function Login() {
                     </div>
                 </section>
                 <section className="order-first md:order-last sm:bg-gradientBg text-white w-full p-6 sm:p-8 md:w-[45%] lg:w-[30%] 2xl:w-[30%] md:flex items-center md:fixed md:right-0 md:top-20 md:bottom-0 md:p-0">
-                    <BusinessCard />
+                    <BusinessCard
+                        props={info}
+                        styles=" md:absolute md:right-[10%] lg:right-[10%] xl:-left-[10%] sm:max-h-[325px] md:max-h-none sm:min-h-[17rem] sm:aspect-[16/11]"
+                    />
                 </section>
-                {/* <section>Hey</section> */}
             </div>
         </article>
     );

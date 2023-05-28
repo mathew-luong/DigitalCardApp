@@ -2,7 +2,7 @@ import Link from "next/link";
 import { FaFacebookSquare, FaTwitter } from "react-icons/fa";
 import { AiFillInstagram, AiFillYoutube } from "react-icons/ai";
 import { Train_One } from "next/font/google";
-import logo from "../../../../public/images/Logo.svg";
+import logo from "../../../../public/images/pictures/Logo.svg";
 import Image from "next/image";
 
 // logo font

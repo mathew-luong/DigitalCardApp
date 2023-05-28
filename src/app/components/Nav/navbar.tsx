@@ -27,7 +27,7 @@ export default function Navbar() {
         <header
             className={
                 "fixed top-0 w-full flex justify-center flex-col sm:flex-row sm:justify-between gap-4 sm:gap-0 py-4 sm:py-6 items-center z-50 transition-all ease-in-out px-12 md:px-28 lg:px-36 xl:px-48 2xl:px-72 3xl:px-[25%] " +
-                ((pathname === "/" && offset > 1) || pathname !== "/"
+                ((pathname === "/" && offset > 0) || pathname !== "/"
                     ? "bg-opacity-100 bg-white "
                     : "bg-transparent ")
             }
