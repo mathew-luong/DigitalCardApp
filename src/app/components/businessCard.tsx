@@ -57,7 +57,7 @@ export default function BusinessCard({ props, styles }: Props) {
                     <div className="flex flex-col gap-2 px-4 py-2 xl:px-6 2xl:px-8 3xl:px-8 3xl:py-8 3xl:gap-4 2xl:text-2xl cardBg">
                         <a
                             href={`tel:${info.phone}`}
-                            className="inline-flex items-center gap-2 hover:colorText group"
+                            className="inline-flex items-center gap-2 group"
                         >
                             <HiOutlinePhone className="text-white" />
                             {info.phone
@@ -66,28 +66,15 @@ export default function BusinessCard({ props, styles }: Props) {
                         </a>
                         <a
                             href={`mailto:${info.email}`}
-                            className="inline-flex items-center gap-2 hover:colorText"
+                            className="inline-flex items-center gap-2"
                         >
                             <HiOutlineMail className="text-white" />
                             {info.email}
                         </a>
-                        {/* <a
-                            href={info.website}
-                            className={
-                                info.website.length !== 0
-                                    ? "inline-flex items-center gap-2 hover:colorText visible pointer-events-auto"
-                                    : "inline-flex items-center gap-2 hover:colorText invisible pointer-events-none"
-                            }
-                        >
-                            <HiOutlineLink className="text-white" />
-                            My website
-                        </a> */}
                         {info.website.length !== 0 && (
                             <a
                                 href={info.website}
-                                className={
-                                    "inline-flex items-center gap-2 hover:colorText"
-                                }
+                                className={"inline-flex items-center gap-2"}
                             >
                                 <HiOutlineLink className="text-white" />
                                 My website
@@ -99,7 +86,7 @@ export default function BusinessCard({ props, styles }: Props) {
                         {info.linkedin.length !== 0 && (
                             <a
                                 href={info.linkedin}
-                                className="inline-flex items-center hover:text-[#0e76a8]"
+                                className="inline-flex items-center hover:text-[#0e76a8] ease-in duration-200"
                             >
                                 <BsLinkedin size="22" />
                             </a>
@@ -107,7 +94,7 @@ export default function BusinessCard({ props, styles }: Props) {
                         {info.twitter.length !== 0 && (
                             <a
                                 href={info.twitter}
-                                className="inline-flex items-center hover:text-[#1DA1F2]"
+                                className="inline-flex items-center hover:text-[#1DA1F2] ease-in duration-200"
                             >
                                 <BsTwitter size="22" />
                             </a>
@@ -115,7 +102,7 @@ export default function BusinessCard({ props, styles }: Props) {
                         {info.instagram.length !== 0 && (
                             <a
                                 href={info.instagram}
-                                className="inline-flex items-center hover:text-[#E1306C]"
+                                className="inline-flex items-center hover:text-[#E1306C] ease-in duration-200"
                             >
                                 <BsInstagram size="22" />
                             </a>
@@ -123,7 +110,7 @@ export default function BusinessCard({ props, styles }: Props) {
                         {info.facebook.length !== 0 && (
                             <a
                                 href={info.facebook}
-                                className="inline-flex items-center hover:text-[#4267B2]"
+                                className="inline-flex items-center hover:text-[#4267B2] ease-in duration-200"
                             >
                                 <BsFacebook size="22" />
                             </a>

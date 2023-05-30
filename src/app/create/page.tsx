@@ -128,7 +128,7 @@ export default function Login() {
                                     >
                                         Company
                                     </label>
-                                    <span className="float-right text-sm italic text-grayText">
+                                    <span className="block float-right text-sm italic text-grayText md:hidden lg:block">
                                         optional
                                     </span>
                                     <input

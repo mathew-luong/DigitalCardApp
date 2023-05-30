@@ -21,7 +21,7 @@ export default function Reviews() {
                                     className="text-white"
                                 />
                             </span>
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ec4899] to-[#6366f1] font-bold text-lg">
+                            <span className="text-lg font-bold colorText">
                                 Designed for everyone
                             </span>
                         </div>
@@ -47,7 +47,7 @@ export default function Reviews() {
                     ></Image>
                 </div>
             </div>
-            <div className="grid items-center grid-flow-row grid-cols-1 gap-8 my-16 md:grid-cols-2 justify-items-center md:my-36">
+            <div className="grid items-center grid-flow-row grid-cols-1 gap-8 my-24 md:grid-cols-2 justify-items-center md:my-36">
                 <div className="flex">
                     <Image
                         src={card}
@@ -66,7 +66,7 @@ export default function Reviews() {
                                     className="text-white"
                                 />
                             </span>
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ec4899] to-[#6366f1] font-bold text-lg">
+                            <span className="text-lg font-bold colorText">
                                 No hidden fees
                             </span>
                         </div>{" "}
@@ -90,7 +90,7 @@ export default function Reviews() {
                             <span className="p-2 rounded-md bg-pinkText">
                                 <BsShareFill size="16" className="text-white" />
                             </span>
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ec4899] to-[#6366f1] font-bold text-lg">
+                            <span className="text-lg font-bold colorText">
                                 Easy to share
                             </span>
                         </div>
@@ -117,7 +117,7 @@ export default function Reviews() {
                     ></Image>
                 </div>
             </div>
-            <hr className="my-12 text-gray"></hr>
+            <hr className="my-16 md:mt-24 text-gray"></hr>
             <div className="w-full">
                 <ReviewCarousel />
             </div>

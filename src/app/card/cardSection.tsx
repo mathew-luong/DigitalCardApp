@@ -37,6 +37,12 @@ const cardVariants = {
 export function CardSection() {
     const [flipped, setFlipped] = useState(false);
 
+    const [share, setShare] = useState(false);
+
+    const setShareMode = () => {
+        setShare(!share);
+    };
+
     return (
         <section className="mt-40 sm:mt-32 md:mt-36">
             <div className="w-full mx-auto text-center">
@@ -52,13 +58,18 @@ export function CardSection() {
                     </p>
                 </SlideUp>
             </div>
-            <div className="p-4 py-6 sm:p-8 md:p-10 lg:p-12 xl:p-14">
-                <BusinessCard
-                    props={info}
-                    styles="max-w-[90%] sm:max-w-[60%] md:max-w-[55%] lg:max-w-[40%] xl:max-w-[35%] mx-auto"
-                />
-                <div className="grid grid-flow-row grid-cols-2 pt-4 place-content-center max-w-[90%] sm:max-w-[60%] md:max-w-[55%] lg:max-w-[40%] xl:max-w-[35%] mx-auto">
-                    <button className="inline-flex items-center gap-2 px-4 py-2 mx-auto font-bold text-white bg-black rounded-md hover:drop-shadow-lg ">
+            <div className="p-4 py-6 sm:p-8 md:p-10 xl:p-12">
+                {!share && (
+                    <BusinessCard
+                        props={info}
+                        styles="max-w-[90%] sm:max-w-[60%] md:max-w-[55%] lg:max-w-[40%] xl:max-w-[35%] mx-auto"
+                    />
+                )}
+                <div className="grid grid-flow-row grid-cols-2 pt-4 place-content-center max-w-[90%] sm:max-w-[60%] md:max-w-[55%] lg:max-w-[40%] xl:max-w-[35%] mx-auto bg-cyan-400">
+                    <button
+                        className="inline-flex items-center gap-2 px-4 py-2 mx-auto font-bold text-white bg-black rounded-md hover:drop-shadow-lg "
+                        onClick={setShareMode}
+                    >
                         QR Code
                     </button>
                     <button className="inline-flex items-center gap-2 px-4 py-2 mx-auto font-bold text-white bg-black rounded-md hover:drop-shadow-lg ">

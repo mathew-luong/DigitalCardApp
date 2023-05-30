@@ -18,15 +18,16 @@ module.exports = {
                 "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
                 "gradient-conic":
                     "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-                gradientBg: "linear-gradient(250deg, #ec4899, #6366f1);",
-                gradientCard: "linear-gradient(250deg, #565656, #000000);",
+                // gradientBg: "linear-gradient(250deg, #ec4899, #6366f1);",
+                gradientBg:
+                    "linear-gradient(250deg, #0088ff, #a033ff,#ff5c87);",
             },
             colors: {
                 brownBg: "#6B6868",
                 lightBg: "#F7F2F2",
                 grayBg: "#F0F0F0",
                 blueBg: "#98D0FF",
-                pinkText: "#ec4899",
+                pinkText: "#ff5c87",
                 pinkDark: "#AD2798",
                 gray: "#AEAEAE",
                 grayText: "#686868",
