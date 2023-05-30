@@ -2,6 +2,7 @@
 import { useState } from "react";
 import SlideUp from "../components/Animations/animSlideUp";
 import BusinessCard from "../components/businessCard";
+import { QrCode } from "./qrcode";
 
 const info = {
     firstName: "Mathew",
@@ -58,14 +59,15 @@ export function CardSection() {
                     </p>
                 </SlideUp>
             </div>
-            <div className="p-4 py-6 sm:p-8 md:p-10 xl:p-12">
+            <div className="p-4 py-6 md:p-8 xl:p-10">
                 {!share && (
                     <BusinessCard
                         props={info}
                         styles="max-w-[90%] sm:max-w-[60%] md:max-w-[55%] lg:max-w-[40%] xl:max-w-[35%] mx-auto"
                     />
                 )}
-                <div className="grid grid-flow-row grid-cols-2 pt-4 place-content-center max-w-[90%] sm:max-w-[60%] md:max-w-[55%] lg:max-w-[40%] xl:max-w-[35%] mx-auto bg-cyan-400">
+                {share && <QrCode />}
+                <div className="grid grid-flow-row grid-cols-2 pt-4 place-content-center max-w-[90%] sm:max-w-[60%] md:max-w-[55%] lg:max-w-[40%] xl:max-w-[35%] mx-auto">
                     <button
                         className="inline-flex items-center gap-2 px-4 py-2 mx-auto font-bold text-white bg-black rounded-md hover:drop-shadow-lg "
                         onClick={setShareMode}

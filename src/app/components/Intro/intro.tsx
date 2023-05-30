@@ -10,10 +10,10 @@ import AnimRotate from "../Animations/animRotate";
 export default function Intro() {
     return (
         <section className="px-12 pt-40 pb-16 md:px-28 lg:px-36 xl:px-48 2xl:px-72 z-1 3xl:px-[25%]">
-            <div className="grid grid-flow-row grid-cols-1 gap-8 md:grid-cols-2 place-items-center">
+            <div className="grid grid-flow-row grid-cols-1 gap-8 lg:gap-2 md:grid-cols-2 place-items-center">
                 <SlideUp>
                     {/* <AnimRotate direction={-5}> */}
-                    <h1 className="lgHeader">
+                    <h1 className="lgHeader xl:text-[3.5rem]">
                         <span className="colorText">
                             {/* <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ec4899] to-[#6366f1]"> */}
                             Share with others.

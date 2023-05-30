@@ -56,17 +56,17 @@ export default function NavSlider() {
             <motion.div
                 className="relative flex items-center justify-center h-8 px-4 py-0 rounded-3xl"
                 animate={{
-                    color: pathname === "/card" ? "#000" : "#686868",
+                    color: pathname === "/share" ? "#000" : "#686868",
                 }}
                 transition={{ duration }}
             >
                 <Link
-                    href="/card"
+                    href="/share"
                     className="relative z-10 grid w-full h-full place-content-center"
                 >
-                    Card
+                    Share
                 </Link>
-                {pathname === "/card" && (
+                {pathname === "/share" && (
                     <motion.div
                         className="absolute top-0 left-0 w-full h-full bg-white rounded-3xl"
                         layoutId="selected"

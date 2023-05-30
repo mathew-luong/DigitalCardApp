@@ -27,11 +27,11 @@ export default function AnimRotate({
             className={classes}
             variants={{
                 hidden: {
-                    // opacity: 0,
+                    opacity: 0,
                     rotate: direction,
                 },
                 visible: {
-                    // opacity: 1,
+                    opacity: 1,
                     rotate: 0,
                 },
             }}
