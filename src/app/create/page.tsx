@@ -55,7 +55,6 @@ export default function Login() {
             <Navbar />
             <div className="flex flex-col h-full pt-40 sm:pt-32 md:pt-36 md:flex-row">
                 <section className="bg-white flex-grow mt-6 md:mt-0 flex justify-center items-center md:w-full md:mr-[55%] lg:mr-[33%] gap-6 md:min-h-full md:overflow-scroll overflow-y-visible pb-8">
-                    {/* <section className="flex items-center justify-center flex-grow gap-6 py-8 overflow-y-visible bg-white md:min-h-full md:overflow-scroll"> */}
                     <div className="flex flex-col gap-6 w-[85%] md:w-[60%] xl:w-[45%]">
                         <div>
                             <h1 className="mb-4 header2">

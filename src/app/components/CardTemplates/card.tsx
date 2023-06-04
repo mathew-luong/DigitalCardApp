@@ -164,13 +164,13 @@ export default function Card({ props, styles }: Props) {
                             "flex gap-4 p-4 rounded-lg " +
                             template?.socialsOrder +
                             " " +
-                            template?.socialsStyle +
                             (info.linkedin !== "" &&
                             info.facebook !== "" &&
                             info.twitter !== "" &&
                             info.instagram !== ""
                                 ? " justify-between "
-                                : " gap-6 ")
+                                : " justify-evenly ") +
+                            template?.socialsStyle
                         }
                     >
                         {info.linkedin.length !== 0 && (

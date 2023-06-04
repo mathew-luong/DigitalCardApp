@@ -1,5 +1,4 @@
 import Content from "./components/Content/content";
-import Details from "./components/Details/details";
 import Featured from "./components/Featured/featured";
 import Footer from "./components/Footer/footer";
 import Intro from "./components/Intro/intro";
@@ -14,7 +13,6 @@ export default function Home() {
             <Content />
             <Featured />
             <Reviews />
-            {/* <Details /> */}
             <Footer />
         </main>
     );

@@ -73,7 +73,8 @@ export const gray = {
 export const column = {
     nameStyle: " uppercase text-[#FF7474] ",
     socialsOrder: " order-2 ",
-    socialsStyle: " flex-row max-w-[50%] text-[#FF7474] p-0 ",
+    socialsStyle:
+        " flex-row max-w-[50%] text-[#FF7474] !p-0 !justify-start !gap-6 ",
     nameContainerStyles: "",
     nameContainerOrder: "",
     cardBg: " bg-black flex-col ",

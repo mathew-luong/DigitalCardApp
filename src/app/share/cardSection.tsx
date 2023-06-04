@@ -5,18 +5,18 @@ import Card from "../components/CardTemplates/card";
 import { QrCode } from "./qrcode";
 
 const info = {
-    templateName: "purple",
+    templateName: "standard",
     firstName: "Mathew",
-    lastName: "Luong",
-    title: "Software Developer",
-    company: "Microsoft",
-    email: "mathewflames@gmail.com",
-    phone: "5878904493",
-    website: "website.com",
+    lastName: "L",
+    title: "CEO",
+    company: "MovieFinder",
+    email: "mathewl@gmail.com",
+    phone: "1234567890",
+    website: "qwer",
     linkedin: "https://www.linkedin.com/in/mathew-luong/",
-    twitter: "https://www.linkedin.com/in/mathew-luong/",
-    instagram: "https://www.linkedin.com/in/mathew-luong/",
-    facebook: "https://www.linkedin.com/in/mathew-luong/",
+    twitter: "qwer",
+    instagram: "qwer",
+    facebook: "qwer",
 };
 
 const cardVariants = {
@@ -68,7 +68,7 @@ export function CardSection() {
                     />
                 )}
                 {share && <QrCode />}
-                <div className="grid grid-flow-row grid-cols-2 pt-4 place-content-center max-w-[90%] sm:max-w-[60%] md:max-w-[55%] lg:max-w-[40%] xl:max-w-[35%] mx-auto">
+                <div className="grid grid-flow-row grid-cols-2 pt-4 mx-auto place-content-center max-w-[90%] sm:max-w-[60%] md:max-w-[55%] lg:max-w-[40%] xl:max-w-[35%]">
                     <button
                         className="inline-flex items-center gap-2 px-4 py-2 mx-auto font-bold text-white bg-black rounded-md hover:drop-shadow-lg "
                         onClick={setShareMode}
