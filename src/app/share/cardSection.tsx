@@ -1,14 +1,15 @@
 "use client";
 import { useState } from "react";
 import SlideUp from "../components/Animations/animSlideUp";
-import BusinessCard from "../components/businessCard";
+import Card from "../components/CardTemplates/card";
 import { QrCode } from "./qrcode";
 
 const info = {
+    templateName: "purple",
     firstName: "Mathew",
     lastName: "Luong",
     title: "Software Developer",
-    company: "Microsoft Corporation",
+    company: "Microsoft",
     email: "mathewflames@gmail.com",
     phone: "5878904493",
     website: "website.com",
@@ -61,7 +62,7 @@ export function CardSection() {
             </div>
             <div className="p-4 py-6 md:p-8 xl:p-10">
                 {!share && (
-                    <BusinessCard
+                    <Card
                         props={info}
                         styles="max-w-[90%] sm:max-w-[60%] md:max-w-[55%] lg:max-w-[40%] xl:max-w-[35%] mx-auto"
                     />

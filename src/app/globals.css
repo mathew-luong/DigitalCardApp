@@ -10,6 +10,10 @@
     --swiper-theme-color: #ff5c87 !important;
 }
 
+.Mui-selected {
+    border: #ff5c87 4px solid;
+}
+
 @layer components {
     .lgHeader {
         font-size: 3rem;

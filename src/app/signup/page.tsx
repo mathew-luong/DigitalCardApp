@@ -8,7 +8,7 @@ import logo from "../../../public/images/pictures/Logo.svg";
 import Image from "next/image";
 import SlideUp from "../components/Animations/animSlideUp";
 
-export default function Login() {
+export default function Signup() {
     const router = useRouter();
 
     const {
@@ -30,7 +30,7 @@ export default function Login() {
         router.back();
     };
 
-    const handleGoogleLogin = () => {
+    const handleGoogleSignup = () => {
         router.back();
     };
 
@@ -45,25 +45,27 @@ export default function Login() {
                         width={150}
                         className="justify-center mb-6"
                     ></Image>
-                    <h2 className="text-center subHeader">Welcome Back.</h2>
+                    <h2 className="text-center subHeader">Get Started.</h2>
                 </SlideUp>
             </section>
             <section className="flex items-center justify-center flex-grow min-h-full gap-6 text-center bg-white">
                 <div className="flex flex-col gap-6 w-[85%] md:w-[60%] xl:w-[45%]">
                     <div>
                         <h1 className="mb-4 header2">
-                            Login
+                            Signup
                             <span className="text-pinkText ml-[2px]">.</span>
                         </h1>
-                        <h2 className="subHeader2">Login to your account</h2>
+                        <h2 className="subHeader2">
+                            Create an account to get started
+                        </h2>
                     </div>
                     <button
                         className="border-[1px] rounded-md border-gray p-2 w-full align-middle hover:bg-[#EFEFEF] active:bg-gray"
-                        onClick={handleGoogleLogin}
+                        onClick={handleGoogleSignup}
                     >
                         <FcGoogle className="float-left" size="24" />
 
-                        <span className="font-bold">Continue with Google</span>
+                        <span className="font-bold">Signup with Google</span>
                     </button>
                     {/* LINE BREAK */}
                     <div className="flex items-center">
@@ -112,16 +114,13 @@ export default function Login() {
                             className="inline-flex justify-center px-4 py-2 mt-6 font-bold text-white bg-black rounded-md hover:drop-shadow-xl"
                             aria-label="Submit"
                         >
-                            Login
+                            Signup
                         </button>
                     </form>
                     <p>
-                        Don&#x27;t have an account yet?{" "}
-                        <Link
-                            className="font-bold text-pinkText"
-                            href="/signup"
-                        >
-                            Signup
+                        Already have an account?{" "}
+                        <Link className="font-bold text-pinkText" href="/login">
+                            Login
                         </Link>
                     </p>
                 </div>

@@ -9,11 +9,11 @@ import AnimRotate from "../Animations/animRotate";
 
 export default function Intro() {
     return (
-        <section className="px-12 pt-40 pb-16 md:px-28 lg:px-36 xl:px-48 2xl:px-72 z-1 3xl:px-[25%]">
+        <section className="px-12 pt-40 sm:pt-44 pb-16 md:px-28 lg:px-36 xl:px-48 2xl:px-72 z-1 3xl:px-[25%]">
             <div className="grid grid-flow-row grid-cols-1 gap-8 lg:gap-2 md:grid-cols-2 place-items-center">
                 <SlideUp>
                     {/* <AnimRotate direction={-5}> */}
-                    <h1 className="lgHeader xl:text-[3.5rem]">
+                    <h1 className="lgHeader xl:text-[3.25rem]">
                         <span className="colorText">
                             {/* <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ec4899] to-[#6366f1]"> */}
                             Share with others.
@@ -29,7 +29,7 @@ export default function Intro() {
                     </p>
                     <Link
                         href="/login"
-                        className="inline-flex items-center self-start gap-2 px-4 py-2 mt-4 mb-[8px] mr-[8px] font-bold text-white bg-black rounded-md hover:drop-shadow-lg group"
+                        className="inline-flex items-center self-start gap-2 px-4 py-2 mt-2 mb-[8px] mr-[8px] font-bold text-white bg-black rounded-md hover:drop-shadow-lg group"
                     >
                         Get started
                         <IoArrowForwardOutline

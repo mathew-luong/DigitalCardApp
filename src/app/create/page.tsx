@@ -1,11 +1,14 @@
 "use client";
 import { useState } from "react";
-import BusinessCard from "../components/businessCard";
+import Card from "../components/CardTemplates/card";
 import Navbar from "../components/Nav/navbar";
+import Tabs from "@mui/base/Tabs";
+import { TemplateTabs } from "./templateTabs";
 
 export default function Login() {
     // const [info, setInfo] = useState(getInfo)
     const [info, setInfo] = useState({
+        templateName: "standard",
         firstName: "",
         lastName: "",
         title: "",
@@ -25,9 +28,13 @@ export default function Login() {
         setInfo({ ...info, [e.target.id]: value });
     };
 
+    // Updates the template for the card
+    const changeTemplate = (e: any, newValue: any) => {
+        setInfo({ ...info, templateName: newValue });
+    };
+
     const onSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        console.log("SUBMITTED");
         // console.log(
         //     data.firstName,
         //     data.lastName,
@@ -48,7 +55,6 @@ export default function Login() {
             <Navbar />
             <div className="flex flex-col h-full pt-40 sm:pt-32 md:pt-36 md:flex-row">
                 <section className="bg-white flex-grow mt-6 md:mt-0 flex justify-center items-center md:w-full md:mr-[55%] lg:mr-[33%] gap-6 md:min-h-full md:overflow-scroll overflow-y-visible pb-8">
-                    {/* CENTER INPUT SECTION */}
                     {/* <section className="flex items-center justify-center flex-grow gap-6 py-8 overflow-y-visible bg-white md:min-h-full md:overflow-scroll"> */}
                     <div className="flex flex-col gap-6 w-[85%] md:w-[60%] xl:w-[45%]">
                         <div>
@@ -182,6 +188,23 @@ export default function Login() {
                                     onChange={handleChange}
                                 ></input>
                             </div>
+                            <div className="flex flex-col flex-wrap">
+                                <label
+                                    htmlFor="variants"
+                                    className="float-left font-bold"
+                                >
+                                    Card Variants
+                                </label>
+                                <Tabs
+                                    defaultValue="standard"
+                                    id="variants"
+                                    className="w-full"
+                                    onChange={changeTemplate}
+                                    value={info.templateName}
+                                >
+                                    <TemplateTabs />
+                                </Tabs>
+                            </div>
                             <h2 className="mt-4 font-bold subHeader">
                                 Optional Details
                             </h2>
@@ -291,7 +314,7 @@ export default function Login() {
                     </div>
                 </section>
                 <section className="order-first md:order-last sm:bg-gradientBg text-white w-full p-6 sm:p-8 md:w-[45%] lg:w-[30%] 2xl:w-[30%] md:flex items-center md:fixed md:right-0 md:top-20 md:bottom-0 md:p-0">
-                    <BusinessCard
+                    <Card
                         props={info}
                         styles=" md:absolute md:right-[10%] lg:right-[10%] xl:-left-[10%] sm:max-h-[325px] md:max-h-none sm:min-h-[17rem] sm:aspect-[16/11]"
                     />
