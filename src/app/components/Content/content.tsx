@@ -1,14 +1,8 @@
-import Marquee from "react-fast-marquee";
 import SlideUp from "../Animations/animSlideUp";
 import Image from "next/image";
-import black from "../../../../public/images/cards/black.png";
-import column from "../../../../public/images/cards/column.png";
-import gray from "../../../../public/images/cards/gray.png";
-import orange from "../../../../public/images/cards/orange.png";
-import purple from "../../../../public/images/cards/purple.png";
-import standard from "../../../../public/images/cards/standard.png";
-import white from "../../../../public/images/cards/white.png";
-import whiteBlack from "../../../../public/images/cards/whiteBlack.png";
+import cardsImg from "../../../../public/images/pictures/cardsLarge.svg";
+import cardsImgLg from "../../../../public/images/pictures/cards.svg";
+import cardsImgMobile from "../../../../public/images/pictures/cards2.svg";
 
 export default function Content() {
     return (
@@ -25,81 +19,25 @@ export default function Content() {
                     below.
                 </p>
             </SlideUp>
-
-            <div className="max-w-full my-16">
-                <Marquee className="items-stretch w-full h-full" speed={30}>
-                    <div className="grid w-full h-full grid-flow-col grid-rows-4 gap-6">
-                        <div className="flex items-center row-span-4 ml-6">
-                            <Image
-                                src={standard}
-                                width={350}
-                                alt="standard card"
-                            ></Image>
-                        </div>
-                        <div className="row-span-3 row-start-2">
-                            <Image
-                                src={black}
-                                width={350}
-                                alt="standard card"
-                            ></Image>
-                        </div>
-                        <div className="row-span-3 row-start-1">
-                            <Image
-                                src={whiteBlack}
-                                width={350}
-                                alt="standard card"
-                            ></Image>
-                        </div>
-                        <div className="flex items-center row-span-4">
-                            <Image
-                                src={column}
-                                width={350}
-                                alt="standard card"
-                            ></Image>
-                        </div>
-                        <div className="row-span-3 row-start-2">
-                            <Image
-                                src={orange}
-                                width={350}
-                                alt="standard card"
-                            ></Image>
-                        </div>
-                        <div className="row-span-3 row-start-1">
-                            <Image
-                                src={white}
-                                width={350}
-                                alt="standard card"
-                            ></Image>
-                        </div>
-                        <div className="row-span-3 row-start-2">
-                            <Image
-                                src={purple}
-                                width={350}
-                                alt="standard card"
-                            ></Image>
-                        </div>
-                        <div className="row-span-3 row-start-1">
-                            <Image
-                                src={gray}
-                                width={350}
-                                alt="standard card"
-                            ></Image>
-                        </div>
-                    </div>
-                </Marquee>
+            <div className="px-12 md:px-28 lg:px-36 xl:px-48 2xl:px-72 3xl:px-[25%] mb-16 sm:mb-24 mt-12">
+                {/* <Image
+                    src={cardsImg}
+                    alt="Card variants"
+                    priority
+                    className="hidden max-w-full mx-auto sm:block lg:max-w-[90%] xl:max-w-[80%] 2xl:max-w-full"
+                /> */}
+                <Image
+                    src={cardsImgLg}
+                    alt="Card variants"
+                    priority
+                    className="hidden max-w-full mx-auto sm:block lg:max-w-[90%] xl:max-w-[80%] 2xl:max-w-full"
+                />
+                <Image
+                    src={cardsImgMobile}
+                    alt="Card variants"
+                    className="block max-w-full mx-auto sm:hidden"
+                />
             </div>
-            <SlideUp width="w-full">
-                <h1 className="mb-4 text-black header max-w-[90%] sm:max-w-[70%] md:max-w-[60%] lg:max-w-[720px] mx-auto mt-16">
-                    Made to be shared
-                    <span className="text-pinkText">.</span>
-                </h1>
-            </SlideUp>
-            <SlideUp width="w-full">
-                <p className="text-center text-grayText max-w-[90%] sm:max-w-[70%] md:max-w-[60%] lg:max-w-[720px] mx-auto mb-24">
-                    Take a look at some beautifully crafted business cards
-                    below.
-                </p>
-            </SlideUp>
         </section>
     );
 }
