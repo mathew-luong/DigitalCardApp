@@ -35,6 +35,7 @@ export default function Content() {
                 <Image
                     src={cardsImgMobile}
                     alt="Card variants"
+                    priority
                     className="block max-w-full mx-auto sm:hidden"
                 />
             </div>

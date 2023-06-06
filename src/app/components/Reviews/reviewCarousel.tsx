@@ -45,7 +45,7 @@ export default function ReviewCarousel() {
                     I can network quicker than ever and make life long
                     friends!&quot;
                 </h1>
-                <h2 className="text-grayText">Nico G, Enterpreneur</h2>
+                <h2 className="text-grayText">Bruce Wayne, Billionaire</h2>
             </SwiperSlide>
         </Swiper>
     );
