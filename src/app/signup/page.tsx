@@ -7,9 +7,13 @@ import { useRouter } from "next/navigation";
 import logo from "../../../public/images/pictures/Logo.svg";
 import Image from "next/image";
 import SlideUp from "../components/Animations/animSlideUp";
+import { useContext } from "react";
+import { AuthContext } from "../context/authContext";
 
 export default function Signup() {
     const router = useRouter();
+    const { handleSignInWithGoogle, handleNewEmailUser, user, isLoadingUser } =
+        useContext(AuthContext);
 
     const {
         register,
@@ -19,19 +23,37 @@ export default function Signup() {
         formState: { errors },
     } = useForm<FieldValues>({
         defaultValues: {
-            username: "",
+            email: "",
             password: "",
             confirmPassword: "",
         },
     });
 
-    const onSubmit: SubmitHandler<FieldValues> = (data) => {
-        console.log("SUBMITTED");
-        router.back();
+    // Handle signup with email and password
+    const onSubmit: SubmitHandler<FieldValues> = async (data) => {
+        handleNewEmailUser(data.email, data.password)
+            .then((userCredential: any) => {
+                // Signed in
+                let user = userCredential.user;
+                router.push("/");
+            })
+            .catch((error: any) => {
+                if (error.code == "auth/email-already-in-use") {
+                    setError("password", {
+                        type: "custom",
+                        message: "Email already in use.",
+                    });
+                } else {
+                    setError("password", {
+                        type: "custom",
+                        message: "Error! " + error.code,
+                    });
+                }
+            });
     };
 
     const handleGoogleSignup = () => {
-        router.back();
+        handleSignInWithGoogle();
     };
 
     return (
@@ -60,8 +82,9 @@ export default function Signup() {
                         </h2>
                     </div>
                     <button
-                        className="border-[1px] rounded-md border-gray p-2 w-full align-middle hover:bg-[#EFEFEF] active:bg-gray"
+                        className="border-[1px] rounded-md border-gray p-2 w-full align-middle hover:bg-[#EFEFEF] active:bg-gray disabled:opacity-70"
                         onClick={handleGoogleSignup}
+                        disabled={Boolean(user)}
                     >
                         <FcGoogle className="float-left" size="24" />
 
@@ -77,24 +100,24 @@ export default function Signup() {
                         className="flex flex-col gap-2 text-start"
                         onSubmit={handleSubmit(onSubmit)}
                     >
-                        <label htmlFor="username" className="font-bold">
-                            Username
+                        <label htmlFor="email" className="font-bold">
+                            Email
                         </label>
                         <input
-                            id="username"
-                            placeholder="Username"
+                            id="email"
+                            placeholder="Email"
                             type="text"
                             className="px-4 py-2 rounded-md border-[1px] border-gray w-full"
-                            required
-                            {...register("username", {
-                                pattern: /^[A-Za-z0-9]*$/,
+                            {...register("email", {
+                                required: true,
+                                pattern:
+                                    /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/,
                             })}
                         ></input>
                         {/* errors will return when field validation fails  */}
-                        {errors.username && (
+                        {errors.email && (
                             <span className="text-rose-500">
-                                Username must only contain letters and/or
-                                numbers.
+                                Email must be of the form: name@mail.com
                             </span>
                         )}
                         <label htmlFor="password" className="mt-2 font-bold">
@@ -106,13 +129,18 @@ export default function Signup() {
                             type="password"
                             className="px-4 py-2 rounded-md border-[1px] border-gray w-full"
                             minLength={5}
-                            required
-                            {...register("password")}
+                            {...register("password", { required: true })}
                         ></input>
+                        {errors.password && (
+                            <p className="text-rose-500">
+                                {errors.password.message?.toString()}
+                            </p>
+                        )}
                         <button
                             type="submit"
-                            className="inline-flex justify-center px-4 py-2 mt-6 font-bold text-white bg-black rounded-md hover:drop-shadow-xl"
+                            className="inline-flex justify-center px-4 py-2 mt-6 font-bold text-white bg-black rounded-md hover:drop-shadow-xl disabled:opacity-70"
                             aria-label="Submit"
+                            disabled={Boolean(user)}
                         >
                             Signup
                         </button>

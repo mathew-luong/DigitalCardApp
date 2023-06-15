@@ -7,13 +7,13 @@ import cardsImgMobile from "../../../../public/images/pictures/cards2.svg";
 export default function Content() {
     return (
         <section className="w-full mx-auto mt-8 text-center sm:mt-24">
-            <SlideUp width="w-full">
+            <SlideUp width="w-full" delayTime={0}>
                 <h1 className="mb-4 text-black header max-w-[90%] sm:max-w-[70%] md:max-w-[60%] lg:max-w-[720px] mx-auto">
                     Simple, easy to configure, shareable
                     <span className="text-pinkText">.</span>
                 </h1>
             </SlideUp>
-            <SlideUp width="w-full">
+            <SlideUp width="w-full" delayTime={0}>
                 <p className="text-center text-grayText max-w-[90%] sm:max-w-[70%] md:max-w-[60%] lg:max-w-[720px] mx-auto">
                     Take a look at some beautifully crafted business cards
                     below.
@@ -23,19 +23,19 @@ export default function Content() {
                 {/* <Image
                     src={cardsImg}
                     alt="Card variants"
-                    priority
+                    loading="lazy"
                     className="hidden max-w-full mx-auto sm:block lg:max-w-[90%] xl:max-w-[80%] 2xl:max-w-full"
                 /> */}
                 <Image
                     src={cardsImgLg}
                     alt="Card variants"
-                    priority
+                    loading="lazy"
                     className="hidden max-w-full mx-auto sm:block lg:max-w-[90%] xl:max-w-[80%] 2xl:max-w-full"
                 />
                 <Image
                     src={cardsImgMobile}
                     alt="Card variants"
-                    priority
+                    loading="lazy"
                     className="block max-w-full mx-auto sm:hidden"
                 />
             </div>

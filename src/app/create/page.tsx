@@ -1,26 +1,53 @@
 "use client";
-import { useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Card from "../components/CardTemplates/card";
 import Navbar from "../components/Nav/navbar";
 import Tabs from "@mui/base/Tabs";
 import { TemplateTabs } from "./templateTabs";
+import { doc, setDoc, getDoc } from "firebase/firestore";
+import { db } from "../../../firebase/firebaseApp";
+import { AuthContext } from "../context/authContext";
 
+const emptyInfo = {
+    templateName: "standard",
+    firstName: "",
+    lastName: "",
+    title: "",
+    company: "",
+    email: "",
+    phone: "",
+    website: "",
+    linkedin: "",
+    twitter: "",
+    instagram: "",
+    facebook: "",
+};
 export default function Login() {
     // const [info, setInfo] = useState(getInfo)
-    const [info, setInfo] = useState({
-        templateName: "standard",
-        firstName: "",
-        lastName: "",
-        title: "",
-        company: "",
-        email: "",
-        phone: "",
-        website: "",
-        linkedin: "",
-        twitter: "",
-        instagram: "",
-        facebook: "",
-    });
+    const [info, setInfo] = useState(emptyInfo);
+
+    useEffect(() => {
+        async function getCardInfo() {
+            if (user) {
+                const docRef = doc(db, "cards", user.uid.toString());
+                const docSnap = await getDoc(docRef);
+                if (docSnap.exists()) {
+                    console.log("Document data:", docSnap.data());
+                    setInfo(docSnap.data().info);
+                } else {
+                    // docSnap.data() will be undefined in this case
+                    console.log("No such document!");
+                }
+            }
+            // else {
+            //     setInfo(emptyInfo)
+            // }
+        }
+        getCardInfo();
+    }, []);
+
+    const { user } = useContext(AuthContext);
+    let disableSubmit = true;
 
     // Updates the state for the corresponding form input field
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -33,7 +60,7 @@ export default function Login() {
         setInfo({ ...info, templateName: newValue });
     };
 
-    const onSubmit = (e: React.FormEvent) => {
+    const onSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         // console.log(
         //     data.firstName,
@@ -48,7 +75,25 @@ export default function Login() {
         //     data.instagram,
         //     data.facebook
         // );
+        if (user) {
+            console.log("THIS USER IS MAKING A DOC:", user.uid);
+            try {
+                const docRef = await setDoc(
+                    doc(db, "cards", user.uid.toString()),
+                    {
+                        info,
+                    }
+                );
+                console.log("Document written with ID:");
+            } catch (e) {
+                console.error("Error adding document: ", e);
+            }
+        }
     };
+
+    if (user) {
+        disableSubmit = false;
+    }
 
     return (
         <article>
@@ -304,8 +349,9 @@ export default function Login() {
                             </div>
                             <button
                                 type="submit"
-                                className="inline-flex justify-center px-4 py-2 mt-6 mb-8 font-bold text-white bg-black rounded-md hover:drop-shadow-lg"
+                                className="inline-flex justify-center px-4 py-2 mt-6 mb-8 font-bold text-white bg-black rounded-md hover:drop-shadow-lg disabled:opacity-60"
                                 aria-label="Submit"
+                                disabled={disableSubmit}
                             >
                                 Save Changes
                             </button>

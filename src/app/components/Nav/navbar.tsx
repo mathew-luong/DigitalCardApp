@@ -1,25 +1,25 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { useState, useEffect } from "react";
+import { useContext } from "react";
 import NavSlider from "./navSlider";
 import { Train_One } from "next/font/google";
+import { AuthContext } from "@/app/context/authContext";
 
 // logo font
 const font = Train_One({ weight: "400", subsets: ["latin"] });
 
 export default function Navbar() {
-    // const pathname = usePathname();
-    // const [offset, setOffset] = useState(0);
-    // useEffect(() => {
-    //     // Handle nav bar background when scroll
-    //     const onScroll = () => setOffset(window.pageYOffset);
-    //     // clean up code
-    //     window.removeEventListener("scroll", onScroll);
-    //     window.addEventListener("scroll", onScroll, { passive: true });
-    //     return () => window.removeEventListener("scroll", onScroll);
-    // }, []);
+    const { handleSignOut, user, isLoadingUser } = useContext(AuthContext);
+
+    // First letter of logged in users name, used as nav bar profile
+    // Guest accounts have ?
+    const getFirstLetter = () => {
+        if (user?.email) {
+            return user.email.charAt(0).toUpperCase();
+        }
+        return "?";
+    };
 
     return (
         <header
@@ -36,18 +36,36 @@ export default function Navbar() {
             </div>
             <NavSlider />
             <div className="items-center justify-end hidden gap-4 sm:flex grow basis-0">
-                <Link
-                    href="/login"
-                    className="text-sm font-bold active:text-slate-600"
-                >
-                    Login
-                </Link>
-                <Link
-                    href="/signup"
-                    className="self-start px-4 py-2 text-sm font-bold text-white bg-black rounded-md hover:drop-shadow-lg"
-                >
-                    Signup
-                </Link>
+                {isLoadingUser ? (
+                    <></>
+                ) : user ? (
+                    <>
+                        <span className="flex items-center justify-center h-[35px] w-[35px] font-bold text-white rounded-full bg-pinkText">
+                            {getFirstLetter()}
+                        </span>
+                        <button
+                            onClick={() => handleSignOut()}
+                            className="self-start px-4 py-2 text-sm font-bold text-white bg-black rounded-md hover:drop-shadow-lg"
+                        >
+                            Logout
+                        </button>
+                    </>
+                ) : (
+                    <>
+                        <Link
+                            href="/login"
+                            className="text-sm font-bold active:text-slate-600"
+                        >
+                            Login
+                        </Link>
+                        <Link
+                            href="/signup"
+                            className="self-start px-4 py-2 text-sm font-bold text-white bg-black rounded-md hover:drop-shadow-lg"
+                        >
+                            Signup
+                        </Link>
+                    </>
+                )}
             </div>
         </header>
     );

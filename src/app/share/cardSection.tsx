@@ -48,13 +48,13 @@ export function CardSection() {
     return (
         <section className="mt-40 sm:mt-32 md:mt-36">
             <div className="w-full mx-auto text-center">
-                <SlideUp width="w-full">
+                <SlideUp width="w-full" delayTime={0}>
                     <h1 className="mb-4 text-black header2 max-w-[90%] sm:max-w-[70%] md:max-w-[60%] lg:max-w-[720px] mx-auto">
                         Share your card with others now
                         <span className="text-pinkText">.</span>
                     </h1>
                 </SlideUp>
-                <SlideUp width="w-full">
+                <SlideUp width="w-full" delayTime={0}>
                     <p className="text-center text-grayText max-w-[90%] sm:max-w-[70%] md:max-w-[60%] lg:max-w-[720px] mx-auto">
                         Share by link or QR code and you&apos;re set.
                     </p>

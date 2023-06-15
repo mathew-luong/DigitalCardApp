@@ -7,9 +7,26 @@ import { useRouter } from "next/navigation";
 import logo from "../../../public/images/pictures/Logo.svg";
 import Image from "next/image";
 import SlideUp from "../components/Animations/animSlideUp";
+import { AuthContext } from "../context/authContext";
+import { useContext, useEffect } from "react";
 
 export default function Login() {
     const router = useRouter();
+    const {
+        handleSignInWithGoogle,
+        handleLoginWithEmail,
+        handleRedirect,
+        handleGuestLogin,
+        user,
+        isLoadingUser,
+    } = useContext(AuthContext);
+
+    // useEffect(() => {
+    //     console.log("LOGIN PAGE USER LOGGED IN");
+    //     if (user) {
+    //         router.push("/");
+    //     }
+    // }, [user, isLoadingUser]);
 
     const {
         register,
@@ -19,20 +36,48 @@ export default function Login() {
         formState: { errors },
     } = useForm<FieldValues>({
         defaultValues: {
-            username: "",
+            email: "",
             password: "",
-            confirmPassword: "",
         },
     });
 
+    // Handle login with email and password
     const onSubmit: SubmitHandler<FieldValues> = (data) => {
-        console.log("SUBMITTED");
-        router.back();
+        handleLoginWithEmail(data.email, data.password)
+            .then((userCredential: any) => {
+                // Signed in
+                let user = userCredential.user;
+                router.push("/");
+            })
+            .catch((error: any) => {
+                setError("password", {
+                    type: "custom",
+                    message: "Invalid credentials.",
+                });
+            });
     };
 
-    const handleGoogleLogin = () => {
-        router.back();
+    const handleGoogleLogin = async () => {
+        try {
+            await handleSignInWithGoogle();
+        } catch (e) {
+            console.error("Login error", e);
+        }
     };
+
+    // Guest login
+    const guestLogin = async () => {
+        handleGuestLogin()
+            .then(() => {
+                // Signed in..
+                router.push("/");
+            })
+            .catch((error: any) => {
+                console.error("Guest login", error.code);
+            });
+    };
+
+    // handleRedirect();
 
     return (
         <div className="flex h-screen">
@@ -58,8 +103,9 @@ export default function Login() {
                         <h2 className="subHeader2">Login to your account</h2>
                     </div>
                     <button
-                        className="border-[1px] rounded-md border-gray p-2 w-full align-middle hover:bg-[#EFEFEF] active:bg-gray"
+                        className="border-[1px] rounded-md border-gray p-2 w-full align-middle hover:bg-[#EFEFEF] active:bg-gray disabled:opacity-70"
                         onClick={handleGoogleLogin}
+                        disabled={Boolean(user)}
                     >
                         <FcGoogle className="float-left" size="24" />
 
@@ -75,24 +121,24 @@ export default function Login() {
                         className="flex flex-col gap-2 text-start"
                         onSubmit={handleSubmit(onSubmit)}
                     >
-                        <label htmlFor="username" className="font-bold">
-                            Username
+                        <label htmlFor="email" className="font-bold">
+                            Email
                         </label>
                         <input
-                            id="username"
-                            placeholder="Username"
+                            id="email"
+                            placeholder="Email"
                             type="text"
                             className="px-4 py-2 rounded-md border-[1px] border-gray w-full"
                             required
-                            {...register("username", {
-                                pattern: /^[A-Za-z0-9]*$/,
+                            {...register("email", {
+                                pattern:
+                                    /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/,
                             })}
                         ></input>
                         {/* errors will return when field validation fails  */}
-                        {errors.username && (
+                        {errors.email && (
                             <span className="text-rose-500">
-                                Username must only contain letters and/or
-                                numbers.
+                                Email must be of the form: name@mail.com
                             </span>
                         )}
                         <label htmlFor="password" className="mt-2 font-bold">
@@ -107,10 +153,16 @@ export default function Login() {
                             required
                             {...register("password")}
                         ></input>
+                        {errors.password && (
+                            <p className="text-rose-500">
+                                {errors.password.message?.toString()}
+                            </p>
+                        )}
                         <button
                             type="submit"
-                            className="inline-flex justify-center px-4 py-2 mt-6 font-bold text-white bg-black rounded-md hover:drop-shadow-xl"
+                            className="inline-flex justify-center px-4 py-2 mt-6 font-bold text-white bg-black rounded-md hover:drop-shadow-xl disabled:opacity-70"
                             aria-label="Submit"
+                            disabled={Boolean(user)}
                         >
                             Login
                         </button>
@@ -123,6 +175,15 @@ export default function Login() {
                         >
                             Signup
                         </Link>
+                    </p>
+                    <p>
+                        <button
+                            className="font-bold text-pinkText"
+                            onClick={guestLogin}
+                        >
+                            Login
+                        </button>{" "}
+                        with guest account.
                     </p>
                 </div>
             </section>

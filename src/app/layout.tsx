@@ -1,5 +1,6 @@
 import "./globals.css";
 import { Raleway } from "next/font/google";
+import AuthProvider from "./context/authContext";
 
 const raleway = Raleway({ subsets: ["latin"] });
 
@@ -15,7 +16,9 @@ export default function RootLayout({
 }) {
     return (
         <html lang="en">
-            <body className={raleway.className}>{children}</body>
+            <body className={raleway.className}>
+                <AuthProvider>{children} </AuthProvider>
+            </body>
         </html>
     );
 }
