@@ -16,7 +16,7 @@ export default function SlideUp({
     width = "w-fit",
     shapeAnim = false,
     styles,
-    delayTime = 0.25,
+    delayTime = 0,
 }: Props) {
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true });

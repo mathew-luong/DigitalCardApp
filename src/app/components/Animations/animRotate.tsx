@@ -37,7 +37,7 @@ export default function AnimRotate({
             }}
             initial="hidden"
             animate={rotateControls}
-            transition={{ duration: 1, delay: 0 }}
+            transition={{ duration: 0.5, delay: 0 }}
             ref={ref}
         >
             {children}
