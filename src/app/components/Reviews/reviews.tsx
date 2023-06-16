@@ -13,7 +13,7 @@ export default function Reviews() {
         <section className="flex flex-col py-16 px-12 md:px-28 lg:px-36 xl:px-48 2xl:px-72 3xl:px-[25%]">
             <div className="grid items-center grid-flow-row grid-cols-1 gap-8 md:grid-cols-2 justify-items-center">
                 <div>
-                    <SlideUp shapeAnim delayTime={0.5}>
+                    <SlideUp shapeAnim delayTime={0.25}>
                         <div className="flex items-center gap-2">
                             <span className="p-2 rounded-md bg-pinkText">
                                 <BsFillGearFill
@@ -26,10 +26,10 @@ export default function Reviews() {
                             </span>
                         </div>
                     </SlideUp>
-                    <SlideUp shapeAnim delayTime={0.5}>
+                    <SlideUp shapeAnim delayTime={0.25}>
                         <h1 className="my-4 lgHeader">How it Works</h1>
                     </SlideUp>
-                    <SlideUp shapeAnim delayTime={0.5}>
+                    <SlideUp shapeAnim delayTime={0.25}>
                         <p className="text-grayText max-w-[50ch]">
                             Create an account and start configuring your
                             business card. Share with others by simply sharing
@@ -58,7 +58,7 @@ export default function Reviews() {
                     ></Image>
                 </div>
                 <div className="order-first md:order-last">
-                    <SlideUp shapeAnim delayTime={0.5}>
+                    <SlideUp shapeAnim delayTime={0.25}>
                         <div className="flex items-center gap-2">
                             <span className="p-2 rounded-md bg-pinkText">
                                 <MdAttachMoney
@@ -71,10 +71,10 @@ export default function Reviews() {
                             </span>
                         </div>{" "}
                     </SlideUp>
-                    <SlideUp shapeAnim delayTime={0.5}>
+                    <SlideUp shapeAnim delayTime={0.25}>
                         <h1 className="my-4 lgHeader">Free of charge</h1>{" "}
                     </SlideUp>
-                    <SlideUp shapeAnim delayTime={0.5}>
+                    <SlideUp shapeAnim delayTime={0.25}>
                         <p className="text-grayText max-w-[50ch]">
                             Create your own digital business card free of
                             charge. No hidden fees. No one time payments.
@@ -85,7 +85,7 @@ export default function Reviews() {
             </div>
             <div className="grid items-center grid-flow-row grid-cols-1 gap-8 md:grid-cols-2 justify-items-center">
                 <div>
-                    <SlideUp shapeAnim delayTime={0.5}>
+                    <SlideUp shapeAnim delayTime={0.25}>
                         <div className="flex items-center gap-2">
                             <span className="p-2 rounded-md bg-pinkText">
                                 <BsShareFill size="16" className="text-white" />
@@ -95,10 +95,10 @@ export default function Reviews() {
                             </span>
                         </div>
                     </SlideUp>
-                    <SlideUp shapeAnim delayTime={0.5}>
+                    <SlideUp shapeAnim delayTime={0.25}>
                         <h1 className="my-4 lgHeader">Share now</h1>
                     </SlideUp>
-                    <SlideUp shapeAnim delayTime={0.5}>
+                    <SlideUp shapeAnim delayTime={0.25}>
                         <p className="text-grayText max-w-[50ch]">
                             Share your digital business card at the click of a
                             button. Share with a QR code or by sharing the link

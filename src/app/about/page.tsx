@@ -8,7 +8,7 @@ export default function About() {
     return (
         <div>
             <Navbar />
-            <section className="px-12 pb-16 md:px-28 lg:px-36 xl:px-48 2xl:px-72 z-1 3xl:px-[25%] mt-40 sm:mt-32 md:mt-36">
+            <section className="px-12 pb-16 md:px-28 lg:px-36 xl:px-48 2xl:px-72 z-1 3xl:px-[25%] mt-40 sm:mt-32 md:mt-36 mb-16 min-h-screen">
                 <div className="w-full mx-auto text-center">
                     <SlideUp width="w-full">
                         <h1 className="font-bold header">

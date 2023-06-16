@@ -14,6 +14,24 @@
     border: #ff5c87 4px solid;
 }
 
+#loading {
+    stroke-dasharray: 300;
+    stroke-dashoffset: 300;
+
+    fill: transparent;
+
+    animation: draw 5s ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes draw {
+    to {
+        stroke-dashoffset: 0;
+        fill: white;
+    }
+}
+
 @layer components {
     .lgHeader {
         font-size: 3rem;

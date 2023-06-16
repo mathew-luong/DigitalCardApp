@@ -4,11 +4,9 @@ import { useForm, SubmitHandler, FieldValues } from "react-hook-form";
 import { FcGoogle } from "react-icons/fc";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import logo from "../../../public/images/pictures/Logo.svg";
-import Image from "next/image";
-import SlideUp from "../components/Animations/animSlideUp";
 import { AuthContext } from "../context/authContext";
 import { useContext, useEffect } from "react";
+import { AnimLogo } from "../components/Animations/animLogo";
 
 export default function Login() {
     const router = useRouter();
@@ -21,12 +19,12 @@ export default function Login() {
         isLoadingUser,
     } = useContext(AuthContext);
 
-    // useEffect(() => {
-    //     console.log("LOGIN PAGE USER LOGGED IN");
-    //     if (user) {
-    //         router.push("/");
-    //     }
-    // }, [user, isLoadingUser]);
+    useEffect(() => {
+        console.log("LOGIN PAGE USER LOGGED IN");
+        if (user) {
+            router.push("/");
+        }
+    }, [user, isLoadingUser]);
 
     const {
         register,
@@ -83,15 +81,8 @@ export default function Login() {
         <div className="flex h-screen">
             <BackBtn />
             <section className="bg-gradientBg text-white hidden md:flex w-1/3 w-max-[33rem] flex-col h-full justify-center items-center p-16">
-                <SlideUp>
-                    <Image
-                        src={logo}
-                        alt="CVVNECT logo"
-                        width={150}
-                        className="justify-center mb-6"
-                    ></Image>
-                    <h2 className="text-center subHeader">Welcome Back.</h2>
-                </SlideUp>
+                <AnimLogo />
+                <h2 className="mt-2 text-center subHeader">Welcome Back.</h2>
             </section>
             <section className="flex items-center justify-center flex-grow min-h-full gap-6 text-center bg-white">
                 <div className="flex flex-col gap-6 w-[85%] md:w-[60%] xl:w-[45%]">
