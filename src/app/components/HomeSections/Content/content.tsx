@@ -1,8 +1,8 @@
-import SlideUp from "../Animations/animSlideUp";
+import SlideUp from "../../Animations/animSlideUp";
 import Image from "next/image";
-import cardsImg from "../../../../public/images/pictures/cardsLarge.svg";
-import cardsImgLg from "../../../../public/images/pictures/cards.svg";
-import cardsImgMobile from "../../../../public/images/pictures/cards2.svg";
+import cardsImg from "../../../../../public/images/pictures/cardsLarge.svg";
+import cardsImgMobile from "../../../../../public/images/pictures/cards2.svg";
+import cardsImgLg from "../../../../../public/images/pictures/cards.svg";
 
 export default function Content() {
     return (

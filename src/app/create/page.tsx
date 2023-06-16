@@ -4,9 +4,24 @@ import Card from "../components/CardTemplates/card";
 import Navbar from "../components/Nav/navbar";
 import Tabs from "@mui/base/Tabs";
 import { TemplateTabs } from "./templateTabs";
-import { doc, setDoc, getDoc } from "firebase/firestore";
+import { doc, setDoc, getDoc, updateDoc } from "firebase/firestore";
 import { db } from "../../../firebase/firebaseApp";
 import { AuthContext } from "../context/authContext";
+
+interface InfoType {
+    templateName: string;
+    firstName: string;
+    lastName: string;
+    title: string;
+    company: string;
+    email: string;
+    phone: string;
+    website: string;
+    linkedin: string;
+    twitter: string;
+    instagram: string;
+    facebook: string;
+}
 
 const emptyInfo = {
     templateName: "standard",
@@ -24,7 +39,7 @@ const emptyInfo = {
 };
 export default function Login() {
     // const [info, setInfo] = useState(getInfo)
-    const [info, setInfo] = useState(emptyInfo);
+    const [info, setInfo] = useState<InfoType>(emptyInfo);
 
     useEffect(() => {
         async function getCardInfo() {
@@ -33,7 +48,8 @@ export default function Login() {
                 const docSnap = await getDoc(docRef);
                 if (docSnap.exists()) {
                     console.log("Document data:", docSnap.data());
-                    setInfo(docSnap.data().info);
+                    let data = docSnap.data() as InfoType;
+                    setInfo(data);
                 } else {
                     // docSnap.data() will be undefined in this case
                     console.log("No such document!");
@@ -78,12 +94,16 @@ export default function Login() {
         if (user) {
             console.log("THIS USER IS MAKING A DOC:", user.uid);
             try {
-                const docRef = await setDoc(
-                    doc(db, "cards", user.uid.toString()),
-                    {
-                        info,
-                    }
-                );
+                // const docRef = await setDoc(
+                //     doc(db, "cards", user.uid.toString()),
+                //     {
+                //         ...info,
+                //     }
+                // );
+                const cardsRef = doc(db, "cards", user.uid.toString());
+                await updateDoc(cardsRef, {
+                    ...info,
+                });
                 console.log("Document written with ID:");
             } catch (e) {
                 console.error("Error adding document: ", e);

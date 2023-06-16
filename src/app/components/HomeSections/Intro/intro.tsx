@@ -1,11 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
-import phone from "../../../../public/images/pictures/heroPictureTall.svg";
-import hero from "../../../../public/images/pictures/heroPicture.svg";
+import phone from "../../../../../public/images/pictures/heroPictureTall.svg";
+import hero from "../../../../../public/images/pictures/heroPicture.svg";
 import { IoArrowForwardOutline } from "react-icons/io5";
 import { IoIosArrowForward } from "react-icons/io";
-import SlideUp from "../Animations/animSlideUp";
-import AnimRotate from "../Animations/animRotate";
+import SlideUp from "../../Animations/animSlideUp";
+import AnimRotate from "../../Animations/animRotate";
 
 export default function Intro() {
     return (

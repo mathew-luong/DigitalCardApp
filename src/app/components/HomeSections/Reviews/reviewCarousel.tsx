@@ -5,7 +5,7 @@ import { Autoplay, Pagination } from "swiper";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
-import SlideUp from "../Animations/animSlideUp";
+import SlideUp from "../../Animations/animSlideUp";
 
 export default function ReviewCarousel() {
     return (

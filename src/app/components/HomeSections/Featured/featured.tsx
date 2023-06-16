@@ -1,13 +1,13 @@
 import Image from "next/image";
-import youtube from "../../../../public/images/brands/youtube.svg";
-import spotify from "../../../../public/images/brands/spotify.svg";
-import google from "../../../../public/images/brands/google.svg";
-import netflix from "../../../../public/images/brands/netflix.svg";
-import coke from "../../../../public/images/brands/coca-cola.svg";
-import cisco from "../../../../public/images/brands/cisco.svg";
-import visa from "../../../../public/images/brands/visa.svg";
-import levis from "../../../../public/images/brands/levis.svg";
-import SlideUp from "../Animations/animSlideUp";
+import youtube from "../../../../../public/images/brands/youtube.svg";
+import spotify from "../../../../../public/images/brands/spotify.svg";
+import google from "../../../../../public/images/brands/google.svg";
+import netflix from "../../../../../public/images/brands/netflix.svg";
+import coke from "../../../../../public/images/brands/coca-cola.svg";
+import cisco from "../../../../../public/images/brands/cisco.svg";
+import visa from "../../../../../public/images/brands/visa.svg";
+import levis from "../../../../../public/images/brands/levis.svg";
+import SlideUp from "../../Animations/animSlideUp";
 
 export default function Featured() {
     return (

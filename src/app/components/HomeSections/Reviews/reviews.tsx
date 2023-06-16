@@ -1,12 +1,12 @@
 import Image from "next/image";
-import info from "../../../../public/images/pictures/information.svg";
-import card from "../../../../public/images/pictures/creditcard.svg";
-import share from "../../../../public/images/pictures/share.svg";
+import info from "../../../../../public/images/pictures/information.svg";
+import card from "../../../../../public/images/pictures/creditcard.svg";
+import share from "../../../../../public/images/pictures/share.svg";
 import { BsFillGearFill, BsShareFill } from "react-icons/bs";
 import { MdAttachMoney } from "react-icons/md";
 
 import ReviewCarousel from "./reviewCarousel";
-import SlideUp from "../Animations/animSlideUp";
+import SlideUp from "../../Animations/animSlideUp";
 
 export default function Reviews() {
     return (
