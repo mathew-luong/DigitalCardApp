@@ -7,6 +7,8 @@ import { useRouter } from "next/navigation";
 import { useContext } from "react";
 import { AuthContext } from "../context/authContext";
 import { AnimLogo } from "../components/Animations/animLogo";
+import pic from "../../../public/images/pictures/signup.svg";
+import Image from "next/image";
 
 export default function Signup() {
     const router = useRouter();
@@ -56,13 +58,19 @@ export default function Signup() {
 
     return (
         <div className="flex h-screen">
-            <BackBtn />
-            <section className="gradientAnim text-white hidden md:flex w-1/3 w-max-[33rem] flex-col h-full justify-center items-center p-16">
-                <AnimLogo />
-                <h2 className="mt-4 text-center subHeader">Get Started.</h2>
+            <BackBtn styles="absolute hidden md:flex items-center bg-[#F0F0F0] p-2 top-6 left-6 ease-in duration-300 rounded-full ring-black/30 hover:ring-6 active:bg-[#D8D8D8]" />
+            <section className="bg-white text-white hidden md:flex w-[50%] w-max-[33rem] flex-col h-full justify-center items-center p-16">
+                <Image src={pic} alt="img" className="w-auto h-auto"></Image>
+                <AnimLogo color="#ff5c87" />
+                <div className="flex flex-wrap justify-center gap-6 mt-10 text-black">
+                    <p>✔️ Easy to use</p>
+                    <p>✔️ Beautiful designs</p>
+                    <p>✔️ Free of charge</p>
+                </div>
             </section>
-            <section className="flex items-center justify-center flex-grow min-h-full gap-6 text-center bg-white">
-                <div className="flex flex-col gap-6 w-[85%] md:w-[55%] xl:w-[40%] 2xl:w-[45%]">
+            <section className="flex items-center justify-center flex-grow min-h-full gap-6 text-center bg-[#F9F7FF]">
+                <div className="flex flex-col gap-6 w-[85%] md:w-[60%] xl:w-[50%] 2xl:w-[55%]">
+                    {/* <div className="flex flex-col gap-6 w-[85%] md:w-[55%] xl:w-[40%] 2xl:w-[45%]"> */}
                     <div>
                         <h1 className="mb-4 header2">
                             Signup
@@ -73,7 +81,7 @@ export default function Signup() {
                         </h2>
                     </div>
                     <button
-                        className="border-[1px] rounded-md border-gray p-2 w-full align-middle hover:bg-[#EFEFEF] active:bg-gray disabled:opacity-70"
+                        className="border-[1px] rounded-md border-gray p-2 w-full align-middle hover:bg-[#EFEFEF] active:bg-gray disabled:opacity-70 bg-white"
                         onClick={handleGoogleSignup}
                         disabled={Boolean(user)}
                     >

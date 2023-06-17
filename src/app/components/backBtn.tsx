@@ -3,7 +3,7 @@
 import { useRouter } from "next/navigation";
 import { FiArrowLeft } from "react-icons/fi";
 
-export default function BackBtn() {
+export default function BackBtn({ styles }: { styles: string }) {
     const router = useRouter();
 
     const handleBtn = () => {
@@ -12,11 +12,7 @@ export default function BackBtn() {
     };
 
     return (
-        <button
-            type="button"
-            className="absolute hidden md:flex items-center bg-white p-2 top-6 left-6 ease-in duration-300 rounded-full ring-white/50 hover:ring-6 active:bg-[#F0F0F0]"
-            onClick={handleBtn}
-        >
+        <button type="button" className={styles} onClick={handleBtn}>
             <FiArrowLeft size="28" className="text-black" />
         </button>
     );

@@ -79,7 +79,7 @@ export default function Login() {
 
     return (
         <div className="flex h-screen">
-            <BackBtn />
+            <BackBtn styles="absolute hidden md:flex items-center bg-white p-2 top-6 left-6 ease-in duration-300 rounded-full ring-white/50 hover:ring-6 active:bg-[#F0F0F0]" />
             {/* <section className="bg-gradientBg text-white hidden md:flex w-1/3 w-max-[33rem] flex-col h-full justify-center items-center p-16"> */}
             <section className="gradientAnim text-white hidden md:flex w-1/3 w-max-[33rem] flex-col h-full justify-center items-center p-16">
                 <AnimLogo />
