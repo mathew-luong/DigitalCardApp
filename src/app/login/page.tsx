@@ -80,12 +80,13 @@ export default function Login() {
     return (
         <div className="flex h-screen">
             <BackBtn />
-            <section className="bg-gradientBg text-white hidden md:flex w-1/3 w-max-[33rem] flex-col h-full justify-center items-center p-16">
+            {/* <section className="bg-gradientBg text-white hidden md:flex w-1/3 w-max-[33rem] flex-col h-full justify-center items-center p-16"> */}
+            <section className="gradientAnim text-white hidden md:flex w-1/3 w-max-[33rem] flex-col h-full justify-center items-center p-16">
                 <AnimLogo />
-                <h2 className="mt-2 text-center subHeader">Welcome Back.</h2>
+                <h2 className="mt-4 text-center subHeader">Welcome Back.</h2>
             </section>
             <section className="flex items-center justify-center flex-grow min-h-full gap-6 text-center bg-white">
-                <div className="flex flex-col gap-6 w-[85%] md:w-[60%] xl:w-[45%]">
+                <div className="flex flex-col gap-6 w-[85%] md:w-[55%] xl:w-[40%] 2xl:w-[45%]">
                     <div>
                         <h1 className="mb-4 header2">
                             Login
@@ -100,7 +101,9 @@ export default function Login() {
                     >
                         <FcGoogle className="float-left" size="24" />
 
-                        <span className="font-bold">Continue with Google</span>
+                        <span className="font-semibold">
+                            Continue with Google
+                        </span>
                     </button>
                     {/* LINE BREAK */}
                     <div className="flex items-center">
@@ -117,7 +120,6 @@ export default function Login() {
                         </label>
                         <input
                             id="email"
-                            placeholder="Email"
                             type="text"
                             className="px-4 py-2 rounded-md border-[1px] border-gray w-full"
                             required
@@ -137,7 +139,6 @@ export default function Login() {
                         </label>
                         <input
                             id="password"
-                            placeholder="Password"
                             type="password"
                             className="px-4 py-2 rounded-md border-[1px] border-gray w-full"
                             minLength={5}

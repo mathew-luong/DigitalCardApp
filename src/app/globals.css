@@ -10,10 +10,22 @@
     --swiper-theme-color: #ff5c87 !important;
 }
 
+/* /create/ color templates selected */
 .Mui-selected {
-    border: #ff5c87 4px solid;
+    border: #ff5c87 2px solid;
+
+    animation: borderAnim 5s ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
 }
 
+@keyframes borderAnim {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Animation for CVNNECT Logo */
 #loading {
     stroke-dasharray: 300;
     stroke-dashoffset: 300;
@@ -24,12 +36,63 @@
     animation-iteration-count: infinite;
     animation-direction: alternate;
 }
-
 @keyframes draw {
     to {
         stroke-dashoffset: 0;
         fill: white;
     }
+}
+
+/* Corner borders for QR Code ------------------------------------ */
+.box {
+    --b: 2px; /* thickness of the border */
+    --c: black; /* color of the border */
+    --w: 20px; /* width of border */
+    --r: 6px; /* radius */
+
+    padding: var(--b); /* space for the border */
+    position: relative;
+}
+.box::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--c, red);
+    padding: var(--b);
+    border-radius: var(--r);
+    -webkit-mask: linear-gradient(0deg, #000 calc(2 * var(--b)), #0000 0) 50%
+            var(--b) / calc(100% - 2 * var(--w)) 100% repeat-y,
+        linear-gradient(-90deg, #000 calc(2 * var(--b)), #0000 0) var(--b) 50%/100%
+            calc(100% - 2 * var(--w)) repeat-x,
+        linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+}
+/* Corner borders for QR Code ------------------------------------ */
+
+/* Animated gradient background ------------------------------------ */
+.gradientAnim {
+    background: linear-gradient(250deg, #0088ff, #a033ff, #ff5c87);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+/* Animated gradient background ------------------------------------ */
+
+/* box shadow including top of container */
+.shadow-all {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
 
 @layer components {

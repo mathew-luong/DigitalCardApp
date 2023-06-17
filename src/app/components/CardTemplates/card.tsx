@@ -78,7 +78,7 @@ export default function Card({ props, styles }: Props) {
 
     return (
         // <AnimShape classes="p-4 bg-[#000000] rounded-xl md:absolute md:right-[10%] lg:right-[10%] xl:-left-[10%] min-h-[15rem] sm:min-h-[17rem] sm:aspect-[16/10]">
-        <div className={"sm:mx-auto text-white z-index-10" + styles}>
+        <div className={"sm:mx-auto text-white z-index-10 " + styles}>
             {info.firstName.length !== 0 && (
                 <div
                     className={

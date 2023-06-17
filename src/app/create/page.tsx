@@ -40,6 +40,7 @@ const emptyInfo = {
 export default function Login() {
     // const [info, setInfo] = useState(getInfo)
     const [info, setInfo] = useState<InfoType>(emptyInfo);
+    const { user } = useContext(AuthContext);
 
     useEffect(() => {
         async function getCardInfo() {
@@ -62,7 +63,6 @@ export default function Login() {
         getCardInfo();
     }, []);
 
-    const { user } = useContext(AuthContext);
     let disableSubmit = true;
 
     // Updates the state for the corresponding form input field
@@ -147,7 +147,6 @@ export default function Login() {
                                     </label>
                                     <input
                                         id="firstName"
-                                        placeholder="First name"
                                         type="text"
                                         className="px-4 py-2 rounded-md border-[1px] border-gray w-full"
                                         required
@@ -164,7 +163,6 @@ export default function Login() {
                                     </label>
                                     <input
                                         id="lastName"
-                                        placeholder="Last name"
                                         type="text"
                                         className="px-4 py-2 rounded-md border-[1px] border-gray w-full"
                                         required
@@ -183,7 +181,6 @@ export default function Login() {
                                     </label>
                                     <input
                                         id="title"
-                                        placeholder="Title"
                                         type="text"
                                         required
                                         value={info.title}
@@ -203,7 +200,6 @@ export default function Login() {
                                     </span>
                                     <input
                                         id="company"
-                                        placeholder="Company"
                                         type="text"
                                         className="px-4 py-2 rounded-md border-[1px] border-gray w-full"
                                         value={info.company}
@@ -223,7 +219,6 @@ export default function Login() {
                                 </span>
                                 <input
                                     id="phone"
-                                    placeholder="Phone number"
                                     type="tel"
                                     pattern="[0-9]{3}[0-9]{3}[0-9]{4}"
                                     className="px-4 py-2 rounded-md border-[1px] border-gray w-full"
@@ -244,7 +239,6 @@ export default function Login() {
                                 </span>
                                 <input
                                     id="email"
-                                    placeholder="Email"
                                     type="email"
                                     className="px-4 py-2 rounded-md border-[1px] border-gray w-full"
                                     required
@@ -284,7 +278,6 @@ export default function Login() {
                                 </span>
                                 <input
                                     id="website"
-                                    placeholder="Website"
                                     type="url"
                                     className="px-4 py-2 rounded-md border-[1px] border-gray w-full"
                                     value={info.website}
@@ -303,7 +296,6 @@ export default function Login() {
                                 </span>
                                 <input
                                     id="linkedin"
-                                    placeholder="LinkedIn"
                                     type="url"
                                     className="px-4 py-2 rounded-md border-[1px] border-gray w-full"
                                     onChange={handleChange}
@@ -322,7 +314,6 @@ export default function Login() {
                                 </span>
                                 <input
                                     id="twitter"
-                                    placeholder="Twitter"
                                     type="url"
                                     className="px-4 py-2 rounded-md border-[1px] border-gray w-full"
                                     value={info.twitter}
@@ -341,7 +332,6 @@ export default function Login() {
                                 </span>
                                 <input
                                     id="instagram"
-                                    placeholder="Instagram"
                                     type="url"
                                     className="px-4 py-2 rounded-md border-[1px] border-gray w-full"
                                     value={info.instagram}
@@ -360,7 +350,6 @@ export default function Login() {
                                 </span>
                                 <input
                                     id="facebook"
-                                    placeholder="Facebook"
                                     type="url"
                                     className="px-4 py-2 rounded-md border-[1px] border-gray w-full"
                                     value={info.facebook}
@@ -378,7 +367,7 @@ export default function Login() {
                         </form>
                     </div>
                 </section>
-                <section className="order-first md:order-last sm:bg-gradientBg text-white w-full p-6 sm:p-8 md:w-[45%] lg:w-[30%] 2xl:w-[30%] md:flex items-center md:fixed md:right-0 md:top-20 md:bottom-0 md:p-0">
+                <section className="order-first md:order-last sm:bg-gradientBg text-white w-full p-6 sm:p-8 md:w-[45%] lg:w-[30%] 2xl:w-[30%] md:flex items-center md:fixed md:right-0 md:top-20 md:bottom-0 md:pt-[90px]">
                     <Card
                         props={info}
                         styles=" md:absolute md:right-[10%] lg:right-[10%] xl:-left-[10%] sm:max-h-[325px] md:max-h-none sm:min-h-[17rem] sm:aspect-[16/11]"

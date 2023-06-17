@@ -6,36 +6,60 @@ export function TemplateTabs() {
         <TabsList className="flex flex-wrap max-w-full gap-4 mt-2">
             <Tab
                 value="standard"
-                className="p-4 bg-black border-4 border-transparent rounded-full hover:shadow-xl"
-            ></Tab>
+                className="flex border-2 border-gray h-[40px] w-[40px] rounded-full p-[2px]"
+            >
+                <div className="w-1/2 h-full bg-black rounded-s-full"></div>
+                <div className="w-1/2 h-full bg-gradientBg rounded-e-full"></div>
+            </Tab>
             <Tab
                 value="black"
-                className="p-4 bg-[#65FFA3] border-4 border-transparent rounded-full hover:shadow-xl"
-            ></Tab>
+                className="flex border-2 border-gray h-[40px] w-[40px] rounded-full p-[2px]"
+            >
+                <div className="w-1/2 h-full bg-black rounded-s-full"></div>
+                <div className="w-1/2 h-full bg-[#65FFA3] rounded-e-full"></div>
+            </Tab>
             <Tab
                 value="whiteBlack"
-                className="p-4 bg-gradient-to-tl from-white to-black border-4 border-[#C6C6C6] rounded-full hover:shadow-xl"
-            ></Tab>
+                className="flex border-2 border-gray h-[40px] w-[40px] rounded-full p-[2px]"
+            >
+                <div className="w-1/2 h-full bg-white rounded-s-full"></div>
+                <div className="w-1/2 h-full bg-black rounded-e-full"></div>
+            </Tab>
             <Tab
                 value="purple"
-                className="p-4 bg-[#6C63FF] border-4 border-transparent rounded-full hover:shadow-xl"
-            ></Tab>
+                className="flex border-2 border-gray h-[40px] w-[40px] rounded-full p-[2px]"
+            >
+                <div className="w-1/2 h-full bg-[#6C63FF] rounded-s-full"></div>
+                <div className="w-1/2 h-full bg-white rounded-e-full"></div>
+            </Tab>
             <Tab
                 value="orange"
-                className="p-4 bg-[#FF7474] border-4 border-transparent rounded-full hover:shadow-xl"
-            ></Tab>
+                className="flex border-2 border-gray h-[40px] w-[40px] rounded-full p-[2px]"
+            >
+                <div className="w-1/2 h-full bg-[#FF7474] rounded-s-full"></div>
+                <div className="w-1/2 h-full bg-black rounded-e-full"></div>
+            </Tab>
             <Tab
                 value="white"
-                className="p-4 bg-white border-4 border-[#C6C6C6] rounded-full hover:shadow-xl"
-            ></Tab>
+                className="flex border-2 border-gray h-[40px] w-[40px] rounded-full p-[2px]"
+            >
+                <div className="w-1/2 h-full bg-white rounded-s-full"></div>
+                <div className="w-1/2 h-full bg-black rounded-e-full"></div>
+            </Tab>
             <Tab
                 value="gray"
-                className="p-4 bg-[#424242] border-4 border-transparent rounded-full hover:shadow-xl"
-            ></Tab>
+                className="flex border-2 border-gray h-[40px] w-[40px] rounded-full p-[2px]"
+            >
+                <div className="w-1/2 h-full bg-[#424242] rounded-s-full"></div>
+                <div className="w-1/2 h-full bg-[#FFBD44] rounded-e-full"></div>
+            </Tab>
             <Tab
                 value="column"
-                className="p-4 bg-gradient-to-tl border-transparent from-black to-[#424242] border-4 rounded-full hover:shadow-xl"
-            ></Tab>
+                className="flex border-2 border-gray h-[40px] w-[40px] rounded-full p-[2px]"
+            >
+                <div className="w-1/2 h-full bg-black rounded-s-full"></div>
+                <div className="w-1/2 h-full bg-[#FF7474] rounded-e-full"></div>
+            </Tab>
         </TabsList>
     );
 }

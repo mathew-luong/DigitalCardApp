@@ -2,8 +2,6 @@ import Image from "next/image";
 import info from "../../../../../public/images/pictures/information.svg";
 import card from "../../../../../public/images/pictures/creditcard.svg";
 import share from "../../../../../public/images/pictures/share.svg";
-import { BsFillGearFill, BsShareFill } from "react-icons/bs";
-import { MdAttachMoney } from "react-icons/md";
 
 import ReviewCarousel from "./reviewCarousel";
 import SlideUp from "../../Animations/animSlideUp";
@@ -15,19 +13,13 @@ export default function Reviews() {
                 <div>
                     <SlideUp shapeAnim delayTime={0.25}>
                         <div className="flex items-center gap-2">
-                            <span className="p-2 rounded-md bg-pinkText">
-                                <BsFillGearFill
-                                    size="16"
-                                    className="text-white"
-                                />
-                            </span>
-                            <span className="text-lg font-bold colorText">
+                            <span className="colorText">
                                 Designed for everyone
                             </span>
                         </div>
                     </SlideUp>
                     <SlideUp shapeAnim delayTime={0.25}>
-                        <h1 className="my-4 lgHeader">How it Works</h1>
+                        <h1 className="my-2 header2">How it Works</h1>
                     </SlideUp>
                     <SlideUp shapeAnim delayTime={0.25}>
                         <p className="text-grayText max-w-[50ch]">
@@ -60,19 +52,11 @@ export default function Reviews() {
                 <div className="order-first md:order-last">
                     <SlideUp shapeAnim delayTime={0.25}>
                         <div className="flex items-center gap-2">
-                            <span className="p-2 rounded-md bg-pinkText">
-                                <MdAttachMoney
-                                    size="16"
-                                    className="text-white"
-                                />
-                            </span>
-                            <span className="text-lg font-bold colorText">
-                                No hidden fees
-                            </span>
-                        </div>{" "}
+                            <span className="colorText">No hidden fees</span>
+                        </div>
                     </SlideUp>
                     <SlideUp shapeAnim delayTime={0.25}>
-                        <h1 className="my-4 lgHeader">Free of charge</h1>{" "}
+                        <h1 className="my-2 header2">Free of charge</h1>{" "}
                     </SlideUp>
                     <SlideUp shapeAnim delayTime={0.25}>
                         <p className="text-grayText max-w-[50ch]">
@@ -87,16 +71,11 @@ export default function Reviews() {
                 <div>
                     <SlideUp shapeAnim delayTime={0.25}>
                         <div className="flex items-center gap-2">
-                            <span className="p-2 rounded-md bg-pinkText">
-                                <BsShareFill size="16" className="text-white" />
-                            </span>
-                            <span className="text-lg font-bold colorText">
-                                Easy to share
-                            </span>
+                            <span className="colorText">Easy to share</span>
                         </div>
                     </SlideUp>
                     <SlideUp shapeAnim delayTime={0.25}>
-                        <h1 className="my-4 lgHeader">Share now</h1>
+                        <h1 className="my-2 header2">Share now</h1>
                     </SlideUp>
                     <SlideUp shapeAnim delayTime={0.25}>
                         <p className="text-grayText max-w-[50ch]">
