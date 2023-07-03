@@ -26,7 +26,7 @@ export function ShareSection() {
     });
 
     const id = user?.uid;
-    const path = "http://localhost:3000/" + id;
+    const path = process.env.NEXT_PUBLIC_WEBSITE_URL! + id;
 
     useEffect(() => {
         if (!user && !isLoadingUser) {
@@ -124,7 +124,7 @@ export function ShareSection() {
                 <h2 className="text-[#252525]">Share via link</h2>
                 <div className="flex items-center justify-between w-full px-2 py-2 overflow-x-hidden text-sm rounded-md bg-grayBg">
                     <div className="max-w-[63%] sm:max-w-[70%] overflow-hidden text-grayText whitespace-nowrap xl:max-w-[72.5%] 2xl:max-w-[80%] text-ellipsis">
-                        cvvnect.com/{id}
+                        {path}
                     </div>
                     <CopyToClipboard text={path} onCopy={copyToClipboard}>
                         <button className="px-4 py-[6px] text-sm bg-white rounded-md active:bg-slate-50 hover:drop-shadow-xl text-[#252525] disabled:opacity-50">

@@ -217,6 +217,9 @@ export default function CreateComponent() {
                                 >
                                     Phone number
                                 </label>
+                                <span className="float-right text-sm font-semibold text-grayText">
+                                    1234567890
+                                </span>
                                 <input
                                     id="phone"
                                     type="tel"
