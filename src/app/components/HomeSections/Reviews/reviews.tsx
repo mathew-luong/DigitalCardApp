@@ -33,7 +33,6 @@ export default function Reviews() {
                     <Image
                         src={info}
                         width={450}
-                        placeholder="blur"
                         alt="How its made image"
                         className="max-w-full self-center h-[100%]"
                     ></Image>
@@ -44,7 +43,6 @@ export default function Reviews() {
                     <Image
                         src={card}
                         width={450}
-                        placeholder="blur"
                         alt="How its made image"
                         className="max-w-full self-center h-[100%]"
                     ></Image>
@@ -93,7 +91,6 @@ export default function Reviews() {
                     <Image
                         src={share}
                         width={450}
-                        placeholder="blur"
                         alt="How its made image"
                         className="max-w-full self-center h-[100%]"
                     ></Image>
