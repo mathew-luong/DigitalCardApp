@@ -10,6 +10,7 @@
         "test": "jest --coverage"
     },
     "dependencies": {
+        "@emailjs/browser": "^3.11.0",
         "@mui/base": "^5.0.0-beta.3",
         "@types/node": "20.1.7",
         "@types/react": "18.2.6",

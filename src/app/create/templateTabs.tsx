@@ -8,8 +8,7 @@ export function TemplateTabs() {
                 value="standard"
                 className="flex border-2 border-gray h-[40px] w-[40px] rounded-full p-[2px]"
             >
-                <div className="w-1/2 h-full bg-black rounded-s-full"></div>
-                <div className="w-1/2 h-full bg-gradientBg rounded-e-full"></div>
+                <div className="w-full h-full bg-black rounded-full"></div>
             </Tab>
             <Tab
                 value="black"
@@ -29,22 +28,19 @@ export function TemplateTabs() {
                 value="purple"
                 className="flex border-2 border-gray h-[40px] w-[40px] rounded-full p-[2px]"
             >
-                <div className="w-1/2 h-full bg-[#6C63FF] rounded-s-full"></div>
-                <div className="w-1/2 h-full bg-white rounded-e-full"></div>
+                <div className="w-full h-full bg-[#6C63FF] rounded-full"></div>
             </Tab>
             <Tab
                 value="orange"
                 className="flex border-2 border-gray h-[40px] w-[40px] rounded-full p-[2px]"
             >
-                <div className="w-1/2 h-full bg-[#FF7474] rounded-s-full"></div>
-                <div className="w-1/2 h-full bg-black rounded-e-full"></div>
+                <div className="w-full h-full bg-[#FF7474] rounded-full"></div>
             </Tab>
             <Tab
                 value="white"
                 className="flex border-2 border-gray h-[40px] w-[40px] rounded-full p-[2px]"
             >
-                <div className="w-1/2 h-full bg-white rounded-s-full"></div>
-                <div className="w-1/2 h-full bg-black rounded-e-full"></div>
+                <div className="w-full h-full bg-white rounded-full"></div>
             </Tab>
             <Tab
                 value="gray"

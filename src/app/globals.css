@@ -13,16 +13,6 @@
 /* /create/ color templates selected */
 .Mui-selected {
     border: #ff5c87 2px solid;
-
-    animation: borderAnim 5s ease-in-out;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-}
-
-@keyframes borderAnim {
-    to {
-        opacity: 1;
-    }
 }
 
 /* Animation for CVNNECT Logo */
@@ -44,30 +34,42 @@
 }
 
 /* Corner borders for QR Code ------------------------------------ */
-.box {
-    --b: 2px; /* thickness of the border */
-    --c: black; /* color of the border */
-    --w: 20px; /* width of border */
-    --r: 6px; /* radius */
 
-    padding: var(--b); /* space for the border */
+.qr {
     position: relative;
 }
-.box::before {
-    content: "";
+.qr:before,
+.qr:after,
+.qr > :first-child:before,
+.qr > :first-child:after {
     position: absolute;
-    inset: 0;
-    background: var(--c, red);
-    padding: var(--b);
-    border-radius: var(--r);
-    -webkit-mask: linear-gradient(0deg, #000 calc(2 * var(--b)), #0000 0) 50%
-            var(--b) / calc(100% - 2 * var(--w)) 100% repeat-y,
-        linear-gradient(-90deg, #000 calc(2 * var(--b)), #0000 0) var(--b) 50%/100%
-            calc(100% - 2 * var(--w)) repeat-x,
-        linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-    -webkit-mask-composite: destination-out;
-    mask-composite: exclude;
+    width: 20px;
+    height: 20px;
+    border-color: black; /* or whatever colour */
+    border-style: solid; /* or whatever style */
+    content: " ";
 }
+.qr:before {
+    top: 0;
+    left: 0;
+    border-width: 2px 0 0 2px;
+}
+.qr:after {
+    top: 0;
+    right: 0;
+    border-width: 2px 2px 0 0;
+}
+.qr > :first-child:before {
+    bottom: 0;
+    right: 0;
+    border-width: 0 2px 2px 0;
+}
+.qr > :first-child:after {
+    bottom: 0;
+    left: 0;
+    border-width: 0 0 2px 2px;
+}
+
 /* Corner borders for QR Code ------------------------------------ */
 
 /* Animated gradient background ------------------------------------ */
@@ -90,9 +92,24 @@
 }
 /* Animated gradient background ------------------------------------ */
 
-/* box shadow including top of container */
-.shadow-all {
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+/* Cards img background */
+.bg-img {
+    background-image: url("/images/pictures/cardsImg.svg");
+}
+
+/* Animation for card from front to back */
+.front-card {
+    transform: perspective(1000px) rotateX(0deg);
+    backface-visibility: hidden;
+    transition: transform 0.4s ease-out;
+    animation: flip 1s ease 1;
+}
+
+@keyframes flip {
+    to {
+        /* transform: perspective(1000px) rotateX(-180deg); */
+        transform: perspective(1000px) rotateX(-360deg);
+    }
 }
 
 @layer components {

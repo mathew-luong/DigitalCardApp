@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
-import BackBtn from "@/app/components/backBtn";
+import BackBtn from "@/app/components/Buttons/backBtn";
 
 describe("Home", () => {
     it("renders a back button", () => {

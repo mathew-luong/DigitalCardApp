@@ -45,7 +45,7 @@ export default function Navbar() {
                         </span>
                         <button
                             onClick={() => handleSignOut()}
-                            className="self-start px-4 py-2 text-sm font-bold text-white bg-black rounded-md hover:drop-shadow-lg"
+                            className="self-start px-4 py-2 text-sm font-semibold text-white bg-black rounded-md hover:drop-shadow-lg"
                         >
                             Logout
                         </button>
@@ -54,13 +54,13 @@ export default function Navbar() {
                     <>
                         <Link
                             href="/login"
-                            className="text-sm font-bold active:text-slate-600"
+                            className="text-sm font-semibold active:text-slate-600"
                         >
                             Login
                         </Link>
                         <Link
                             href="/signup"
-                            className="self-start px-4 py-2 text-sm font-bold text-white bg-black rounded-md hover:drop-shadow-lg"
+                            className="self-start px-4 py-2 text-sm font-semibold text-white bg-black rounded-md hover:drop-shadow-lg"
                         >
                             Signup
                         </Link>

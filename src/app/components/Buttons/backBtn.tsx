@@ -7,7 +7,6 @@ export default function BackBtn({ styles }: { styles: string }) {
     const router = useRouter();
 
     const handleBtn = () => {
-        // router.back();
         router.push("/");
     };
 

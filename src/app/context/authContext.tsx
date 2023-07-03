@@ -1,20 +1,19 @@
 "use client";
 
-import { createContext, useEffect, useState } from "react";
+import { createContext } from "react";
 import {
     createUserWithEmailAndPassword,
     getRedirectResult,
     GoogleAuthProvider,
     signInAnonymously,
     signInWithEmailAndPassword,
-    signInWithPopup,
     signInWithRedirect,
     signOut,
     User,
 } from "firebase/auth";
 import { auth } from "../../../firebase/firebaseApp";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { useRouter } from "next/navigation";
+import { Toaster } from "react-hot-toast";
 
 interface defaultContextType {
     handleSignInWithGoogle: Function;
@@ -46,17 +45,11 @@ export default function AuthProvider({
     children: React.ReactNode;
 }) {
     const [user, isLoadingUser, error] = useAuthState(auth);
-    const router = useRouter();
 
-    // useEffect(() => {
-    //     console.log("THE AUTH STATE JUST CHANGED");
-    //     handleRedirect();
-    // }, [user, isLoadingUser]);
+    const googleProvider = new GoogleAuthProvider();
 
-    const handleSignInWithGoogle = async () => {
-        await signInWithRedirect(auth, new GoogleAuthProvider());
-        return;
-    };
+    const handleSignInWithGoogle = () =>
+        signInWithRedirect(auth, googleProvider);
 
     const handleLoginWithEmail = async (email: string, password: string) => {
         return signInWithEmailAndPassword(auth, email, password);
@@ -71,13 +64,9 @@ export default function AuthProvider({
         return signInAnonymously(auth);
     };
 
-    //Checks for provider login result, then navigates
+    //Checks for provider login result, then navigates home
     const handleRedirect = async () => {
-        const result = await getRedirectResult(auth);
-        console.log("CHECKING FOR REDIRECT RESULT");
-        if (result) {
-            router.push("/");
-        }
+        return getRedirectResult(auth);
     };
 
     const handleSignOut = () => {
@@ -104,6 +93,18 @@ export default function AuthProvider({
                 isLoadingUser,
             }}
         >
+            <Toaster
+                toastOptions={{
+                    className: "",
+                    style: {
+                        borderRadius: "24px",
+                        background: "#333",
+                        color: "#fff",
+                        height: "42px",
+                        marginTop: "8px",
+                    },
+                }}
+            />
             {children}
         </AuthContext.Provider>
     );

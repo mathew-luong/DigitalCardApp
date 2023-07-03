@@ -9,6 +9,7 @@ interface Props {
     shapeAnim?: boolean;
     styles?: string;
     delayTime?: number;
+    translateYStart?: number;
 }
 
 export default function SlideUp({
@@ -17,6 +18,7 @@ export default function SlideUp({
     shapeAnim = false,
     styles,
     delayTime = 0,
+    translateYStart = 15,
 }: Props) {
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true });
@@ -39,7 +41,7 @@ export default function SlideUp({
             {/* Slide up animation */}
             <motion.div
                 variants={{
-                    hidden: { opacity: 0, translateY: 75 },
+                    hidden: { opacity: 0, translateY: translateYStart },
                     visible: { opacity: 1, translateY: 0 },
                 }}
                 initial="hidden"

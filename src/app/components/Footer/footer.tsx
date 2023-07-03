@@ -89,39 +89,55 @@ export default function Footer() {
                 ) : user ? (
                     <button
                         onClick={() => handleSignOut()}
-                        className="flex items-center justify-center p-2 font-bold text-white transition-colors duration-300 ease-in-out border border-white rounded-md hover:bg-white hover:text-black active:bg-gray active:border-gray"
+                        className="flex items-center justify-center p-2 font-semibold text-white transition-colors duration-300 ease-in-out border border-white rounded-md hover:bg-white hover:text-black active:bg-gray active:border-gray"
                     >
                         Logout
                     </button>
                 ) : (
                     <Link
                         href="/login"
-                        className="flex items-center justify-center p-2 font-bold text-white transition-colors duration-300 ease-in-out border border-white rounded-md hover:bg-white hover:text-black active:bg-gray active:border-gray"
+                        className="flex items-center justify-center p-2 font-semibold text-white transition-colors duration-300 ease-in-out border border-white rounded-md hover:bg-white hover:text-black active:bg-gray active:border-gray"
                     >
                         Login
                     </Link>
                 )}
 
                 <div className="flex justify-center gap-4">
-                    <a href="https://facebook.com" target="_blank">
+                    <a
+                        href="https://facebook.com"
+                        target="_blank"
+                        aria-label="facebook"
+                    >
                         <FaFacebookSquare
                             size="24"
                             className="text-[#DADADA] ease-in duration-200 hover:text-white"
                         />
                     </a>
-                    <a href="https://twitter.com" target="_blank">
+                    <a
+                        href="https://twitter.com"
+                        target="_blank"
+                        aria-label="twitter"
+                    >
                         <FaTwitter
                             size="24"
                             className="text-[#DADADA] hover:text-white ease-in duration-200"
                         />
                     </a>
-                    <a href="https://instagram.com" target="_blank">
+                    <a
+                        href="https://instagram.com"
+                        target="_blank"
+                        aria-label="instagram"
+                    >
                         <AiFillInstagram
                             size="24"
                             className="text-[#DADADA] hover:text-white ease-in duration-200"
                         />
                     </a>
-                    <a href="https://youtube.com" target="_blank">
+                    <a
+                        href="https://youtube.com"
+                        target="_blank"
+                        aria-label="youtube"
+                    >
                         <AiFillYoutube
                             size="24"
                             className="text-[#DADADA] hover:text-white ease-in duration-200"

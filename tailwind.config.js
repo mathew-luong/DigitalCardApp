@@ -28,7 +28,7 @@ module.exports = {
                 pinkText: "#ff5c87",
                 pinkDark: "#AD2798",
                 gray: "#E0E1E8",
-                grayText: "#686868",
+                grayText: "#868e96",
             },
             screens: {
                 "3xl": "2000px",

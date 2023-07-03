@@ -71,36 +71,41 @@ export default function Card({ props, styles }: Props) {
     };
 
     useEffect(() => {
-        setInfo(props);
+        // set the template style
         initTemplate(props.templateName);
-        console.log("THESE ARE THE PROPS:", props);
+        // set card info
+        setInfo(props);
     }, [props]);
 
     return (
-        // <AnimShape classes="p-4 bg-[#000000] rounded-xl md:absolute md:right-[10%] lg:right-[10%] xl:-left-[10%] min-h-[15rem] sm:min-h-[17rem] sm:aspect-[16/10]">
         <div className={"sm:mx-auto text-white z-index-10 " + styles}>
             {info.firstName.length !== 0 && (
                 <div
                     className={
-                        "flex gap-4 rounded-xl p-4 2xl:p-8 " + template?.cardBg
+                        "flex gap-4 rounded-xl p-4 2xl:p-8 min-h-[15rem] sm:min-h-[16rem] 2xl:min-h-[18rem] 3xl:min-h-[22rem] max-w-[700px] front-card  " +
+                        template?.cardBg
                     }
                 >
                     {/* Container for info */}
                     <div
                         className={
-                            "flex flex-col w-full gap-4 " +
+                            "flex flex-col w-full gap-4 justify-evenly " +
                             template?.infoContainerOrder
                         }
                     >
                         {/* Container for Name and title/company */}
                         <div
                             className={
+                                // "flex gap-2 " + // NEW
                                 "flex flex-col gap-2 " +
                                 template?.nameContainerStyles +
                                 " " +
                                 template?.nameContainerOrder
                             }
                         >
+                            {/* <div className="w-[75px] h-[75px] bg-sky-400 rounded-md"></div> NEW */}
+                            {/* <div className="flex flex-col w-full gap-2"> */}
+                            {/* NEW */}
                             <h1
                                 className={
                                     " text-2xl 2xl:text-4xl 3xl:text-5xl font-bold " +
@@ -119,9 +124,10 @@ export default function Card({ props, styles }: Props) {
                                 {info.company.length !== 0 &&
                                     " - " + info.company}
                             </h2>
+                            {/* </div> */}
                         </div>
                         {/* Container for Phone, Email, Website */}
-                        <div className="flex flex-col gap-4 2xl:text-2xl">
+                        <div className="flex flex-col gap-4 2xl:text-2xl ">
                             <a
                                 href={`tel:${info.phone}`}
                                 className="inline-flex items-center gap-2 group"
@@ -149,6 +155,7 @@ export default function Card({ props, styles }: Props) {
                                 <a
                                     href={info.website}
                                     className={"inline-flex items-center gap-2"}
+                                    target="_blank"
                                 >
                                     <HiOutlineLink
                                         className={template?.iconColor}
@@ -177,6 +184,7 @@ export default function Card({ props, styles }: Props) {
                             <a
                                 href={info.linkedin}
                                 className="inline-flex items-center hover:text-[#0e76a8] ease-in duration-200"
+                                target="_blank"
                             >
                                 <BsLinkedin size="22" />
                             </a>
@@ -185,6 +193,7 @@ export default function Card({ props, styles }: Props) {
                             <a
                                 href={info.twitter}
                                 className="inline-flex items-center hover:text-[#1DA1F2] ease-in duration-200"
+                                target="_blank"
                             >
                                 <BsTwitter size="22" />
                             </a>
@@ -193,6 +202,7 @@ export default function Card({ props, styles }: Props) {
                             <a
                                 href={info.instagram}
                                 className="inline-flex items-center hover:text-[#E1306C] ease-in duration-200"
+                                target="_blank"
                             >
                                 <BsInstagram size="22" />
                             </a>
@@ -201,6 +211,7 @@ export default function Card({ props, styles }: Props) {
                             <a
                                 href={info.facebook}
                                 className="inline-flex items-center hover:text-[#4267B2] ease-in duration-200"
+                                target="_blank"
                             >
                                 <BsFacebook size="22" />
                             </a>
@@ -209,14 +220,13 @@ export default function Card({ props, styles }: Props) {
                 </div>
             )}
             {info.firstName.length === 0 && (
-                <div className="py-4 xl:py-6 2xl:py-8 3xl:py-12 bg-[#000000] flex flex-col gap-4 rounded-xl min-h-[15rem] sm:min-h-[17rem] 3xl:min-h-[20rem] items-center justify-center">
-                    <h1 className="px-4 text-2xl font-bold 2xl:text-4xl 3xl:text-5xl xl:px-6 2xl:px-8 3xl:px-8">
-                        Start creating your card now!
+                <div className="p-6 xl:p-8 3xl:p-12 bg-[#000000] flex flex-col gap-4 rounded-xl min-h-[15rem] sm:min-h-[16rem] 2xl:min-h-[18rem] 3xl:min-h-[22rem] max-w-[700px] ">
+                    <h1 className="text-2xl font-bold 2xl:text-4xl 3xl:text-5xl">
+                        🏃 Get started
                     </h1>
+                    <h2 className="text-slate-300">Begin creating your card</h2>
                 </div>
             )}
         </div>
-
-        // </AnimShape>
     );
 }

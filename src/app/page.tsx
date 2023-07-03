@@ -1,4 +1,3 @@
-import { CardInfo } from "./components/HomeSections/CardInfo/cardInfo";
 import Content from "./components/HomeSections/Content/content";
 import Featured from "./components/HomeSections/Featured/featured";
 import Footer from "./components/Footer/footer";
@@ -13,7 +12,6 @@ export default function Home() {
             <Intro />
             <Content />
             <Featured />
-            <CardInfo />
             <Reviews />
             <Footer />
         </main>
