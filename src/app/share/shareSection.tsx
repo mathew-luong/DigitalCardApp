@@ -90,7 +90,7 @@ export function ShareSection() {
                 </p>
             </div>
             <div className="flex flex-col gap-2 qr">
-                <QrCode url={"/" + id} />
+                <QrCode url={path} />
             </div>
             <div className="flex flex-col gap-2">
                 <h2 className="text-[#252525]">Email</h2>
