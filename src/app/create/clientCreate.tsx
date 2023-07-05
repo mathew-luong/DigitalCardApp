@@ -122,7 +122,7 @@ export default function CreateComponent() {
         <article>
             <Navbar />
             <div className="flex flex-col h-full pt-40 sm:pt-32 md:pt-36 md:flex-row">
-                <section className="bg-white flex-grow mt-6 md:mt-0 flex justify-center items-center md:w-full md:mr-[47.5%] lg:mr-[33%] gap-6 md:min-h-full md:overflow-scroll overflow-y-visible pb-8">
+                <section className="overflow-auto flex-grow mt-6 md:mt-0 flex justify-center items-center md:w-full md:mr-[47.5%] lg:mr-[33%] gap-6 md:min-h-full pb-8">
                     <div className="flex flex-col gap-6 w-[85%] md:w-[70%] lg:w-[60%] xl:w-[45%]">
                         <div>
                             <h1 className="mb-4 header2">

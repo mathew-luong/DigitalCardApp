@@ -76,7 +76,7 @@ export function ShareSection() {
     ) : !user ? (
         <></>
     ) : (
-        <div className="mx-auto max-w-[90%] sm:max-w-[60%] md:max-w-[55%] lg:max-w-[40%] xl:max-w-[35%] 2xl:max-w-[750px] rounded-xl p-6 mt-8 flex gap-6 flex-col bg-white relative shadow-xl">
+        <div className="mx-auto max-w-[90%] sm:max-w-[60%] md:max-w-[55%] lg:max-w-[40%] xl:max-w-[35%] 2xl:max-w-[600px] rounded-xl p-6 mt-8 flex gap-6 flex-col bg-white relative shadow-xl">
             <Link
                 href={`/${id}`}
                 className="absolute px-4 py-2 text-sm font-semibold text-black transition-colors duration-300 ease-in-out bg-white border-2 rounded-md border-pinkText hover:drop-shadow-xl top-6 right-6 hover:bg-pinkText hover:text-white"
