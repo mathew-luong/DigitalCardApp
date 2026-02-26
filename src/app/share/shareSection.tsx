@@ -26,7 +26,7 @@ export function ShareSection() {
     });
 
     const id = user?.uid;
-    const path = `${process.env.NEXT_PUBLIC_WEBSITE_URL!} + ${id}`;
+    const path = `${process.env.NEXT_PUBLIC_WEBSITE_URL!}/${id}`;
 
     useEffect(() => {
         if (!user && !isLoadingUser) {
