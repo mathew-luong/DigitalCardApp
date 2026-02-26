@@ -3,11 +3,10 @@
 import { createContext } from "react";
 import {
     createUserWithEmailAndPassword,
-    getRedirectResult,
     GoogleAuthProvider,
     signInAnonymously,
     signInWithEmailAndPassword,
-    signInWithRedirect,
+    signInWithPopup,
     signOut,
     User,
 } from "firebase/auth";
@@ -49,7 +48,7 @@ export default function AuthProvider({
     const googleProvider = new GoogleAuthProvider();
 
     const handleSignInWithGoogle = () =>
-        signInWithRedirect(auth, googleProvider);
+        signInWithPopup(auth, googleProvider);
 
     const handleLoginWithEmail = async (email: string, password: string) => {
         return signInWithEmailAndPassword(auth, email, password);
@@ -64,10 +63,7 @@ export default function AuthProvider({
         return signInAnonymously(auth);
     };
 
-    //Checks for provider login result, then navigates home
-    const handleRedirect = async () => {
-        return getRedirectResult(auth);
-    };
+    const handleRedirect = async () => null;
 
     const handleSignOut = () => {
         signOut(auth)
