@@ -26,7 +26,7 @@ export function ShareSection() {
     });
 
     const id = user?.uid;
-    const path = process.env.NEXT_PUBLIC_WEBSITE_URL! + id;
+    const path = `${process.env.NEXT_PUBLIC_WEBSITE_URL!} + ${id}`;
 
     useEffect(() => {
         if (!user && !isLoadingUser) {
@@ -46,7 +46,7 @@ export function ShareSection() {
                 "service_ihw6c36",
                 "template_kwgc80i",
                 messageParams,
-                process.env.NEXT_PUBLIC_EMAIL_KEY
+                process.env.NEXT_PUBLIC_EMAIL_KEY,
             )
             .then(
                 (res) => {
@@ -56,7 +56,7 @@ export function ShareSection() {
                 },
                 (err) => {
                     toast.error("Failed to send email.");
-                }
+                },
             );
         reset();
     };
